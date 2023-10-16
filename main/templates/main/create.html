@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{%block title%}Regsiter{%endblock%}
+
+{% block  content%}
+<div class="form-container">
+    <h3>Register</h3>  
+    <form method="post" action="/create/" class="form-group">
+        {% csrf_token %}
+        <div class="form-p-fields">
+            {{form.as_p}}
+        </div>    
+        <button type="submit", name="save" class="btn btn-success">Save</button>
+    </form>    
+</div>
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .form-p-fields p {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock  %}
+ 
+
+
