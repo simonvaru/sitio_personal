@@ -23,6 +23,7 @@ def demoapp2(response):
     return render(response, "main/demoapp2.html", {})
 
 def demoapp3(response):
+    response.user
     return render(response, "main/demoapp3.html", {})
 
 def create(response):

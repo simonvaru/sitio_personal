@@ -3,9 +3,11 @@ from . import views
 
 urlpatterns = [
 path("<int:id>/", views.index, name="index"),   
-# path("home/", views.home, name="home"),  
+#path("home/", views.home, name="home"),  
 #path("index/", views.home, name="index"), 
 path("home/", views.home, name="home"),
+path("", views.home, name="home"),
+#path("home", views.home, name="home"),
 #path("index/", views.home, name="index"),
 path("cv/", views.cvsim, name="cvsim"),
 path("p1/", views.demoapp1, name="demoapp1"),
