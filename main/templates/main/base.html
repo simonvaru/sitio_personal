@@ -1,7 +1,18 @@
+{% load static %}
 <!doctype html>
 <html>
     <head>
         <style type="text/css">
+            .top {
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+
+            .other-link {
+                font-family: Arial, sans-serif;
+                font-size: 10px;
+            }
+
             .sidenav {
                 height:100%;
                 width: 160px;
@@ -9,7 +20,7 @@
                 z-index: 1;
                 top: 0;
                 left: 0;
-                background-color:#111;
+                background-color:#2E4053;
                 overflow-x: hidden;
                 padding-top: 20px;
             }
@@ -17,7 +28,7 @@
             .sidenav a {
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 22px;
                 color:#818181;
                 display:block;
             }
@@ -40,24 +51,32 @@
         {% block extrastyles %}{% endblock %} {% comment %} added for bootstrap 4 suggested by AI  {% endcomment %}
 
     </head>
+
 <body>
     {% comment %} <p>base template</p>
     <p>{{name}}</p> {% endcomment %}
+
     <div class="sidenav">
         <a href="/home">Home</a>
+        <p></p>
         <a href="/cv">Curriculum</a>
-        <a href="/p1">Demoapp1</a>
-        <a href="/p2/">Demoapp2</a>
-        <a href="/p3/">Demoapp3</a>
-        <a href="/create/">Create Item</a>
+        <p></p>
+        <a href="/p1">Image Editor</a>
+        <p></p>
+        <a href="/p2/">Parking Manager</a>
+        <p></p>
+        <a href="/p3/">Calculator</a>
+        <p></p>
+        <a href="/create/">Leave a Message</a>
+        <p></p>
         {% comment %} <a href="/list/">List</a> {% endcomment %}
-        <a href="/2">View</a>
+        {% comment %} <a href="/2">View</> {% endcomment %}
         <a href="/register/">User Register</a>
     </div>
     <div id="content", name="content", class="main">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h1 class="mt-2">Sim's Site</h1>
+                <h3 class="mt-2">SIM'S PROFESSIONAL PORTFOLIO <img id="coffee-pic" src="{% static 'images/coffee_cup.png' %}" alt="Coffee Cup" style="width: 40px; height: 40px;"></h3>
                 <hr class="mt-0 mb-4">
                 {% block content %}
                 {% endblock %}
