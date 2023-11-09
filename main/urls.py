@@ -14,5 +14,5 @@ path("p1/", views.demoapp1, name="demoapp1"),
 path("p2/", views.demoapp2, name="demoapp2"),
 path("p3/", views.demoapp3, name="demoapp3"),
 path("create/", views.create, name="create"),
-
+path('success/', views.success, name='success'),
 ]

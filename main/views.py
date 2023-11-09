@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
 from .models import ToDoList, Item
 from .forms import CreateNewList
 
@@ -26,9 +26,11 @@ def demoapp3(response):
     response.user
     return render(response, "main/demoapp3.html", {})
 
-def create(response):
-    if response.method == "POST":
-        form=CreateNewList(response.POST)
+# def create(response):
+#     if response.method == "POST":
+def create(request):
+    if request.method == "POST":
+        form=CreateNewList(request.POST)
         
         if form.is_valid():
             todo=ToDoList(
@@ -39,10 +41,14 @@ def create(response):
             # avatar=form.cleaned_data["avatar"],
             )
             todo.save()
-        return HttpResponseRedirect("/%i" %todo.id)   
+        # return HttpResponseRedirect("/%i" %todo.id)   
+        return redirect('success')
             
     else:    
         form=CreateNewList()
-    return render(response, "main/create.html", {"form":form})
+    # return render(response, "main/create.html", {"form":form})        
+    return render(request, "main/create.html", {"form":form})
 
+def success(response):
+    return render(response, "main/success.html", {})
 
