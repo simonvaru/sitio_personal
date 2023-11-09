@@ -1,12 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
 class ToDoList(models.Model):
     name=models.CharField(default="example", max_length=200)
-    surname = models.CharField(default="example", max_length=200)  
+    # surname = models.CharField(default="example", max_length=200)  
     email = models.EmailField(default="example@example.com")
-    message = models.CharField(blank=True, max_length=2000)
-    avatar = models.CharField(blank=True, max_length=2000)
+    message = models.TextField(blank=True)
+    # message = models.TextField(blank=True)
+    # avatar = models.CharField(blank=True, max_length=2000)
     
     def __str__(self):
         return self.name

@@ -1,16 +1,105 @@
 {% extends "main/base.html" %}
 
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form method="post" action="/create/" class="form-group">
+        {% csrf_token %}
+        <!-- "Name" field -->
+        <div class="form-p-fields">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {{ form.name.errors }}
+        </div>
+        <!-- "Email" field -->
+        <div class="form-p-fields">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+        <!-- Apply CSS styling to the "Message" label -->
+        <div class="form-p-fields">
+            <label for="{{ form.message.id_for_label }}" class="message-label">Message:</label>
+            {{ form.message }}
+        </div>
+        <button type="submit" name="save" class="btn btn-success">Submit</button>
+    </form>
+</div>
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+  
+    .message-label {
+        position: relative;
+        top: -220px; /* Adjust the value to move the label as needed */
+    }
+    
+    .form-p-fields p {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+
+
+
+
+
+
+{% comment %} {% extends "main/base.html" %}
+
 {%block title%}Regsiter{%endblock%}
 
 {% block  content%}
 <div class="form-container">
-    <h3>Register</h3>  
+    <h3>Message</h3>  
+    <form method="post" action="/create/" class="form-group">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-p-fields">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+    
+        <button type="submit" name="save" class="btn btn-success">Submit</button>
+    </form>
+        
+</div>
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .form-p-fields p {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock  %} {% endcomment %}
+
+
+
+
+
+{% comment %} {% extends "main/base.html" %}
+
+{%block title%}Regsiter{%endblock%}
+
+{% block  content%}
+<div class="form-container">
+    <h3>Message</h3>  
     <form method="post" action="/create/" class="form-group">
         {% csrf_token %}
         <div class="form-p-fields">
             {{form.as_p}}
         </div>    
-        <button type="submit", name="save" class="btn btn-success">Save</button>
+        <button type="submit", name="save" class="btn btn-success">Submit</button>
     </form>    
 </div>
 <style>
@@ -24,6 +113,12 @@
     }
 </style>
 {% endblock  %}
- 
+
+ {% endcomment %}
+
+
+
+
+  
 
 

@@ -33,10 +33,10 @@ def create(response):
         if form.is_valid():
             todo=ToDoList(
             name=form.cleaned_data["name"],
-            surname=form.cleaned_data["surname"],
+            # surname=form.cleaned_data["surname"],
             email=form.cleaned_data["email"],
             message=form.cleaned_data["message"],
-            avatar=form.cleaned_data["avatar"],
+            # avatar=form.cleaned_data["avatar"],
             )
             todo.save()
         return HttpResponseRedirect("/%i" %todo.id)   
