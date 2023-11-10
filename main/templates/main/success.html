@@ -1,10 +1,9 @@
 {% extends "main/base.html" %}
-
-{% block title %}Submission Successful{% endblock %}
+{% load static %}
+{% block title %}Success{% endblock %}
 
 {% block content %}
 <div class="form-container">
-    <h3>Submission Successful</h3>
-    <p>Thank you!</p>
+    <img src="{% static 'images/submission.png' %}" width="500" alt="exito">
 </div>
 {% endblock %}

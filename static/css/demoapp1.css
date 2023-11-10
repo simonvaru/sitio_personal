@@ -1,0 +1,32 @@
+head{
+    background-color:#F8F8F8!important;
+}
+
+h1, h2, h4, h5, h5, p{
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 16px;
+    padding: 0;
+    font-family: Arial ;
+
+}
+
+a {
+    
+    color: rgb(97, 94, 94);
+    font-size: 18px;
+    font-family:  Arial;
+    }
+
+body{
+	background-color:#F8F8F8!important;
+}
+
+h6 {
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 16px;
+    padding: 0;
+    font-family: Arial;
+
+}
+
+

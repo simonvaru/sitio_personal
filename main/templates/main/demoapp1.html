@@ -1,13 +1,22 @@
 {% extends "main/base.html" %}
-
 {% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>pagina destinada a mostrar mi primera app</title>
+    {% comment %} css styles link {% endcomment %}
+    <link href="{% static "css\demoapp1.css" %}" rel="stylesheet" type="text/css">
+    <p>Long live, PYSCRIPT!</p>
+    <h1>I have develope a GUI Image Editor.</h1>
+    <h2>Unfortunatly, PYSCRIPT don't support Tkinter package yet.</h2>
+    <h4>So, for now, I share the link to the public Github commit.</h4>
+    <p></p>
+    <a target="_blank" href="https://github.com/simonvaru/GUI_Image_Editor">https://github.com/simonvaru/GUI_Image_Editor</a>
+    <p></p>
+    <h5>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h5>
 </head>
 <body>
-    <h1>Run Python Program</h1>
+    <h6>Run Python Program</h6>
     
 </body>
 </html>
