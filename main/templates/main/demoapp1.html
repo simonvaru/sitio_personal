@@ -3,21 +3,119 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    {% comment %} css styles link {% endcomment %}
-    <link href="{% static "css\demoapp1.css" %}" rel="stylesheet" type="text/css">
-    <p>Long live, PYSCRIPT!</p>
-    <h1>I have develope a GUI Image Editor.</h1>
-    <h2>Unfortunatly, PYSCRIPT don't support Tkinter package yet.</h2>
-    <h4>So, for now, I share the link to the public Github commit.</h4>
-    <p></p>
-    <a target="_blank" href="https://github.com/simonvaru/GUI_Image_Editor">https://github.com/simonvaru/GUI_Image_Editor</a>
-    <p></p>
-    <h5>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h5>
-</head>
-<body>
-    <h6>Run Python Program</h6>
+    <head>
+        {% comment %} css styles link {% endcomment %}
+        <link href="{% static "css\demoapp1.css" %}" rel="stylesheet" type="text/css">
+        <p>Long live, PYSCRIPT!</p>
+        <h1>I have develope a GUI Image Editor.</h1>
+        <h2>Unfortunatly, PYSCRIPT don't support Tkinter package yet.</h2>
+        <h4>So, for now, I share the link to the public Github commit.</h4>
+        <p></p>
+        <div3>
+            <a target="_blank" href="https://github.com/simonvaru/GUI_Image_Editor">https://github.com/simonvaru/GUI_Image_Editor</a>
+        </div3>
+        <p></p>
+        <h5>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h5>
+
+            <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Drawing Tool</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: green;
+        }
+
+        #root {
+            display: flex;
+        }
+
+        #left-frame {
+            width: 200px;
+            height: 600px;
+            background-color: gray;
+        }
+
+        .left-top-frame {
+            width: 200px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+
+        .bg-1 {
+            background-color: #878E61;
+        }
+
+        .bg-2 {
+            background-color: #CED5A7;
+        }
+        #canvas-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    </head>
+    <body>
+        <h6>Run JS/Python program</h6>
+
+        <div id="root">
+        <div id="left-frame">
+            <div class="left-top-frame bg-1"></div>
+            <div class="left-top-frame bg-2"></div>
+            <div class="left-top-frame bg-1"></div>
+            <div class="left-top-frame bg-2"></div>
+            <div class="left-top-frame bg-1"></div>
+            <div class="left-top-frame bg-2"></div>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas" width="750" height="500" style="border:1px solid black;"></canvas>
+        </div>
+    </div>
     
-</body>
+    <script>
+        /*FUNCTIONS*/
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var drawing = false;
+
+        canvas.addEventListener("mousedown", startDrawing);
+        canvas.addEventListener("mousemove", drawPen);
+        canvas.addEventListener("mouseup", stopDrawing);
+
+        function startDrawing(e) {
+            drawing = true;
+            drawPen(e);
+        }
+
+        function drawPen(e) {
+            if (!drawing) return;
+
+            ctx.beginPath();
+            ctx.arc(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = "black";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            ctx.beginPath();
+        }
+        /*END OF FUNCTIONS*/
+    </script>
+
+    </body>
 </html>
-{% endblock %}
+{% endblock %} 
+
+
+
+

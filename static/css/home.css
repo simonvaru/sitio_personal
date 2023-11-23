@@ -1,0 +1,14 @@
+head{
+	background-color:#F8F8F8!important;
+}
+
+h1, h2, p{
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 16px;
+    padding: 0;
+    font-family: Arial ;
+}
+
+body{
+	background-color:#F8F8F8!important;
+}

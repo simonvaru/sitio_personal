@@ -2,54 +2,13 @@
 <!doctype html>
 <html>
     <head>
-        <style type="text/css">
-            .top {
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-            }
-
-            .other-link {
-                font-family: Arial, sans-serif;
-                font-size: 10px;
-            }
-
-            .sidenav {
-                height:100%;
-                width: 160px;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color:#2E4053;
-                overflow-x: hidden;
-                padding-top: 20px;
-            }
-
-            .sidenav a {
-                padding: 6px 8px 6px 16px;
-                text-decoration: none;
-                font-size: 22px;
-                color:#818181;
-                display:block;
-            }
-            .sidenav a:hover{
-                color:#f1f1f1;
-            }
-            .main{
-                margin-left:160px;
-                padding: 0px 10px;
-            }
-        </style>
-
+        <title>{% block title %}Sim's webpage{% endblock %}</title>
+        {% comment %} css styles link {% endcomment %}    
+        <link href="{% static "css\base.css" %}" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-        <title>{% block title %}Sim's webpage{% endblock %}</title>
-
         {% block extrastyles %}{% endblock %} {% comment %} added for bootstrap 4 suggested by AI  {% endcomment %}
-
     </head>
 
 <body>
@@ -71,12 +30,12 @@
         <p></p>
         {% comment %} <a href="/list/">List</a> {% endcomment %}
         {% comment %} <a href="/2">View</> {% endcomment %}
-        <a href="/register/">User Register</a>
+        {% comment %} <a href="/register/">User Register</a> {% endcomment %}
     </div>
     <div id="content", name="content", class="main">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h3 class="mt-2">SIM'S PROFESSIONAL PORTFOLIO <img id="coffee-pic" src="{% static 'images/coffee_cup.png' %}" alt="Coffee Cup" style="width: 40px; height: 40px;"></h3>
+                <h30 class="mt-2">SIM'S PROFESSIONAL PORTFOLIO <img id="coffee-pic" src="{% static 'images/coffee_cup.png' %}" alt="Coffee Cup" style="width: 40px; height: 40px;"></h30>
                 <hr class="mt-0 mb-4">
                 {% block content %}
                 {% endblock %}

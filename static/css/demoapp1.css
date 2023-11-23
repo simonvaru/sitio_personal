@@ -10,12 +10,13 @@ h1, h2, h4, h5, h5, p{
 
 }
 
-a {
-    
+div3{
     color: rgb(97, 94, 94);
     font-size: 18px;
     font-family:  Arial;
-    }
+    padding: 0% 0% 0% 20%;
+    
+}
 
 body{
 	background-color:#F8F8F8!important;

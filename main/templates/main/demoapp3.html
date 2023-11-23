@@ -4,25 +4,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% comment %} css styles link {% endcomment %}    
-        <link href="{% static "css\demoapp3.css" %}" rel="stylesheet" type="text/css">
-        <h1>A simple Calculator. Based on Python, library math and originally Tkinter.</h1>
+        {% comment %} css styles link {% endcomment %}  
+        <link href="{% static "css\demoapp3.css" %}" rel="stylesheet" type="text/css">  
+        <script href="{% static "js\demoapp3.js" %}" defer></script>  
+        <h1>A simple calculator. Based on Python, library math and originally Tkinter.</h1>
         <p></p>
-        <a target="_blank" href="https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
+        <div3>
+            <a target="_blank" href="https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
+        </div3>
         <p></p>
-        <h2>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h2>
-        </head>
+        <h2>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h2>    
+    </head>
+    <body>
+        <div class="calculator-grid">
+            <div class="output">
+                <div class="previous-operand"></div>
+                <div class="current-operand"></div>
+            </div>
+            <button class="span-two">AC</button>
+            <button>DEL</button>
+            <button>/</button>
+            <button>1L</button>
+            <button>2</button>
+            <button>3</button>
+            <button>*</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>-</button>
+            <button>.</button>
+            <button>0</button>
+            <button class="span-two">=</button>
+        </div>
 
-<body>
-    <div1>
-        <h3>1</h3>
-    </div1>
-
-    <div2>
-        <h4>2</h4>
-    </div2>
-</body>
-
-
+        
+    </body>
 </html>
 {% endblock %}
