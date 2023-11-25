@@ -12,7 +12,7 @@ h1, h2, p{
 body{
   padding: 0;
   margin: 0;
-	background-color:#f8f8f8!important;
+	background-color:#f8f8f8;
 }
 
 *, *::before, *::after {
@@ -36,9 +36,34 @@ body{
   font-size: 2rem;
   border: 1px solid white;
   outline: none;
-  background-color: rgba(122, 236, 137)
+  background-color: rgb(125, 238, 140)
 }
 
 .calculator-grid>button:hover{
-  background-color: rgba(108, 224, 124);
+  background-color: rgb(99, 221, 115);
+}
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1/-1;
+  background-color: rgb(19, 18, 18);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.output .previous-operand{
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand{
+  color: white;
+  font-size: 2.5rem;
 }
