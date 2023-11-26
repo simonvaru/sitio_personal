@@ -67,3 +67,54 @@ body{
   color: white;
   font-size: 2.5rem;
 }
+
+
+
+/*START PYSCRIPT SECTION*/
+.calculator-grid-PYSCRIPT{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5,100px);
+}
+
+.calculator-grid-PYSCRIPT>button{
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #A6B44F;
+  outline: none;
+  color: #F1C40F;
+  background-color: rgb(42, 43, 42)
+}
+
+.calculator-grid-PYSCRIPT>button:hover{
+  background-color: rgb(34, 34, 34);
+}
+
+.span-two-PYSCRIPT{
+  grid-column: span 2;
+}
+
+.output-PYSCRIPT{
+  grid-column: 1/-1;
+  background-color: rgb(60, 52, 172);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.output-PYSCRIPT .previous-operand-PYSCRIPT{
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output-PYSCRIPT .current-operand-PYSCRIPT{
+  color: white;
+  font-size: 2.5rem;
+}
+/*END PYSCRIPT SECTION*/

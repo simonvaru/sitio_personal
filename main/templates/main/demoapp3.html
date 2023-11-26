@@ -4,9 +4,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% comment %} css styles link {% endcomment %}  
+        {% comment %} start css styles link JS{% endcomment %}  
         <link href="{% static "css\demoapp3.css" %}" rel="stylesheet" type="text/css">  
         <script src="{% static "js\demoapp3.js" %}" defer></script>  
+        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" /> {% comment "PYSCRIPT framework " %}{% endcomment %}
+        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script> {% comment "PYSCRIPT framework " %}{% endcomment %}
         <h1>A simple calculator. Based on Python, library math and originally Tkinter.</h1>
         <p></p>
         <div3>
@@ -40,8 +42,58 @@
             <button data-number>0</button>
             <button data-equals class="span-two">=</button>
         </div>
-
+        {% comment %} end css styles link JS {% endcomment %}  
         
+    
+
+
+
+
+        {% comment %} start css styles link JS and PYSCRIPT{% endcomment %}  
+        <div class="calculator-grid-PYSCRIPT">
+            <div class="output-PYSCRIPT">
+                <div data-previous-operand class="previous-operand-PYSCRIPT"></div>
+                <div data-current-operand class="current-operand-PYSCRIPT"></div>
+            </div>
+            <button data-all-clear class="span-two-PYSCRIPT">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>/</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>*</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-equals class="span-two-PYSCRIPT">=</button>
+        </div>     
+        <script>
+            {% comment %} <py-script>print("HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello");
+            </py-script>
+            var myButton1 = document.getElementById("myButton1");
+            myButton1.addEventListener("click", function() {
+                // Function to execute when the button is clicked
+                <py-script>print("HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello");
+                </py-script>
+            });
+                 {% endcomment %}
+            
+        </script>    
+               
+        
+        
+        {% comment %} end css styles link JS and PYSCRIPT{% endcomment %}
     </body>
+    
+
+
+
 </html>
 {% endblock %}
