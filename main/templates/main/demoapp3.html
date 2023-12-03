@@ -54,8 +54,8 @@
 
 
         {% comment %} start html with css styles and PYSCRIPT logic {% endcomment %}  
-        <py-script src="{% static "python\logic.py" %}" > </py-script>
-        
+        {% comment %} <py-script src="{% static "python\logic.py" %}" > </py-script> {% endcomment %}
+        <py-script src="..\..\static\python\logic.py" > </py-script>
 
         <main id="main">
 

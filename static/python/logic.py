@@ -1,6 +1,7 @@
-from selenium import webdriver
+# from selenium import webdriver
+from js import console, document
 
-driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+# driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 
 class Calculator:
     def __init__(self, num_first, num_second, sign_click, cal_type):
@@ -101,8 +102,10 @@ def what_type(curr_num):
         return num
 
 def theme_clicked(args):
-    all_btns = driver.find_elements_by_class_name("btns")
-    all_btns_num = driver.find_elements_by_class_name("btns-num")
+    # all_btns = driver.find_elements_by_class_name("btns")
+    # all_btns_num = driver.find_elements_by_class_name("btns-num")
+    all_btns = document.getElementsByClassName("btns")
+    all_btns_num = document.getElementsByClassName("btns-num")
     if args.target.id == "light":
         change_theme(all_btns, all_btns_num)
     else:
