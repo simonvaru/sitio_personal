@@ -71,50 +71,117 @@ body{
 
 
 /*START PYSCRIPT SECTION*/
-.calculator-grid-PYSCRIPT{
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5,100px);
-}
 
-.calculator-grid-PYSCRIPT>button{
-  cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid #A6B44F;
-  outline: none;
-  color: #F1C40F;
-  background-color: rgb(42, 43, 42)
-}
 
-.calculator-grid-PYSCRIPT>button:hover{
-  background-color: rgb(34, 34, 34);
-}
-
-.span-two-PYSCRIPT{
-  grid-column: span 2;
-}
-
-.output-PYSCRIPT{
-  grid-column: 1/-1;
-  background-color: rgb(60, 52, 172);
+#main {
+  width: 400px;
+  height: 750px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  background-color: #060709;
   flex-direction: column;
-  padding: 10px;
-  word-wrap: break-word;
-}
-
-.output-PYSCRIPT .previous-operand-PYSCRIPT{
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.5rem;
-}
-
-.output-PYSCRIPT .current-operand-PYSCRIPT{
+  margin: 90px auto;
+  border-radius: 20px;
   color: white;
-  font-size: 2.5rem;
+  padding-top: 10px;
+  overflow: hidden;
 }
+
+
+#theme-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  height: 80px;
+  width: 120px;
+  border-radius: 20px;
+  background-color: #292D36;
+  padding: 0px 20px;
+}
+
+
+#theme-buttons i {
+  cursor: pointer;
+}
+
+#calc-wrapper {
+  width: 100%;
+  text-align: right;
+  padding-right: 40px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+#calc-wrapper span {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+#calc-wrapper h4 {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+#btn-wrapper {
+  background-color: #292D36;
+  height: 100%;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 18px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 15px;
+}
+
+#row-1-btns, #row-2-btns, #row-3-btns, #row-4-btns, #row-5-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+#row-1-btns div, #row-2-btns div, #row-3-btns div, #row-4-btns div, #row-5-btns div {
+  border-radius: 14px;
+  background-color: #272B33;
+  color: white;
+  font-size: 1.5em;
+  font-weight: normal;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bottom-line {
+  width: 160px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #474B52;
+  margin: 20px auto;
+}
+
+#row-1-btns div {
+  color: #25FCD5;
+}
+#row-1-btns div:last-of-type, #row-2-btns div:last-of-type, 
+#row-3-btns div:last-of-type, #row-4-btns div:last-of-type, #row-5-btns div:last-of-type {
+  color: #F47A7B;
+}
+
+#typing-text {
+  height: 50px;
+}
+
+#answer {
+  height: 70px;
+}
+
+#typing-text span {
+  color: #F47A7B !important;
+  padding: 0px 10px;
+  font-size: 18px;
+}
+
 /*END PYSCRIPT SECTION*/

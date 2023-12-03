@@ -4,11 +4,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% comment %} start css styles link JS{% endcomment %}  
+        {% comment %} start css styles link JS {% endcomment %}
         <link href="{% static "css\demoapp3.css" %}" rel="stylesheet" type="text/css">  
-        <script src="{% static "js\demoapp3.js" %}" defer></script>  
-        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" /> {% comment "PYSCRIPT framework " %}{% endcomment %}
-        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script> {% comment "PYSCRIPT framework " %}{% endcomment %}
+        <script src="{% static "js\demoapp3.js" %}" defer></script>   
+        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+        {% comment "start PYSCRIPT framework" %}{% endcomment %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script> 
+        {% comment "end PYSCRIPT framework " %}{% endcomment %}
         <h1>A simple calculator. Based on Python, library math and originally Tkinter.</h1>
         <p></p>
         <div3>
@@ -42,54 +46,71 @@
             <button data-number>0</button>
             <button data-equals class="span-two">=</button>
         </div>
-        {% comment %} end css styles link JS {% endcomment %}  
+        {% comment %} end html with css styles and JS logic {% endcomment %}  
         
     
 
 
 
 
-        {% comment %} start css styles link JS and PYSCRIPT{% endcomment %}  
-        <div class="calculator-grid-PYSCRIPT">
-            <div class="output-PYSCRIPT">
-                <div data-previous-operand class="previous-operand-PYSCRIPT"></div>
-                <div data-current-operand class="current-operand-PYSCRIPT"></div>
+        {% comment %} start html with css styles and PYSCRIPT logic {% endcomment %}  
+        <py-script src="{% static "python\logic.py" %}" > </py-script>
+        
+
+        <main id="main">
+
+            <!-- theme buttons -->
+            <div id="theme-buttons">
+                <i id="light" class="bi bi-brightness-high" style="font-size: 1.2rem; color: #474B52;" pys-onClick="theme_clicked"></i>
+                <i id="dark" class="bi bi-moon" style="font-size: 1.2rem;" pys-onClick="theme_clicked"></i>
             </div>
-            <button data-all-clear class="span-two-PYSCRIPT">AC</button>
-            <button data-delete>DEL</button>
-            <button data-operation>/</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-operation>*</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-operation>+</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-operation>-</button>
-            <button data-number>.</button>
-            <button data-number>0</button>
-            <button data-equals class="span-two-PYSCRIPT">=</button>
-        </div>     
-        <script>
-            {% comment %} <py-script>print("HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello");
-            </py-script>
-            var myButton1 = document.getElementById("myButton1");
-            myButton1.addEventListener("click", function() {
-                // Function to execute when the button is clicked
-                <py-script>print("HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello");
-                </py-script>
-            });
-                 {% endcomment %}
-            
-        </script>    
-               
+
+            <!-- the calculations -->
+            <div id="calc-wrapper">
+                <div id="typing-text"></div>
+                <h4 id="answer"></h4>
+            </div>
         
-        
-        {% comment %} end css styles link JS and PYSCRIPT{% endcomment %}
+            <div id="btn-wrapper">
+                <div id="row-1-btns">
+                    <div id="ac" class="btns" pys-onClick="sign_clicked">AC</div>
+                    <div id="plus-or-minus" class="btns" pys-onClick="sign_clicked">&#43&#8725&#8722</div>
+                    <div id="percent" class="btns" pys-onClick="sign_clicked">&#37</div>
+                    <div id="divid" class="btns" pys-onClick="sign_clicked">&#247</div>
+                </div>
+
+                <div id="row-2-btns">
+                <div id="number-7" class="btns-num" pys-onClick="numbers_clicked">7</div>
+                <div id="number-8" class="btns-num" pys-onClick="numbers_clicked">8</div>
+                <div id="number-9" class="btns-num" pys-onClick="numbers_clicked">9</div>
+                <div id="multiply" class="btns" pys-onClick="sign_clicked">&#215</div>
+                </div>
+
+                <div id="row-3-btns">
+                    <div id="number-4" class="btns-num" pys-onClick="numbers_clicked">4</div>
+                    <div id="number-5" class="btns-num" pys-onClick="numbers_clicked">5</div>
+                    <div id="number-6" class="btns-num" pys-onClick="numbers_clicked">6</div>
+                    <div id="minus" class="btns" pys-onClick="sign_clicked">&#8722</div>
+                </div>
+
+                <div id="row-4-btns">
+                    <div id="number-1" class="btns-num" pys-onClick="numbers_clicked">1</div>
+                    <div id="number-2" class="btns-num" pys-onClick="numbers_clicked">2</div>
+                    <div id="number-3" class="btns-num" pys-onClick="numbers_clicked">3</div>
+                    <div id="plus" class="btns" pys-onClick="sign_clicked">&#43</div>
+                </div>
+
+                <div id="row-5-btns">
+                    <div id="reverse" class="btns-num" pys-onClick="sign_clicked"><i id="reverse" class="bi bi-arrow-counterclockwise"></i></div>
+                    <div id="number-0" class="btns-num" pys-onClick="numbers_clicked">0</div>
+                    <div id="dot" class="btns-num" pys-onClick="numbers_clicked">.</div>
+                    <div id="equal-to" class="btns" pys-onClick="sign_clicked">&#61</div>
+                </div>
+
+                <div id="bottom-line"></div>
+            </div>     
+        </main>
+        {% comment %} end html with css styles and PYSCRIPT logic {% endcomment %}
     </body>
     
 
