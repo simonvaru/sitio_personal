@@ -1,6 +1,6 @@
 # from selenium import webdriver
-from js import console, document
-
+from js import console, document #####,driver? from js???
+#from  PyScript import Element
 # driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 
 class Calculator:
@@ -10,25 +10,25 @@ class Calculator:
         self.sign_click = sign_click
         self.cal_type = cal_type
 
-class Element:
-    def __init__(self, element_id):
-        self.element_id = element_id
-        self.element = driver.find_element_by_id(element_id)
+# class Element:
+#     def __init__(self, element_id):
+#         self.element_id = element_id
+#         self.element = driver.find_element_by_id(element_id)
 
-    def set_inner_text(self, text):
-        self.element.innerText = text
+#     def set_inner_text(self, text):
+#         self.element.innerText = text
 
-    def set_html(self, html_content):
-        self.element.innerHTML = html_content
+#     def set_html(self, html_content):
+#         self.element.innerHTML = html_content
 
-    def add_class(self, class_name):
-        self.element.classList.add(class_name)
+#     def add_class(self, class_name):
+#         self.element.classList.add(class_name)
 
-    def remove_class(self, class_name):
-        self.element.classList.remove(class_name)
+#     def remove_class(self, class_name):
+#         self.element.classList.remove(class_name)
 
-    def style(self, property, value):
-        self.element.style[property] = value
+#     def style(self, property, value):
+#         self.element.style[property] = value
         
 demo_calculator = Calculator("", "", "", "")
 answer = Element("typing-text")
@@ -69,7 +69,8 @@ def sign_clicked(args):
             
         
 def calculate():
-    print(demo_calculator.num_first, float(demo_calculator.num_second), demo_calculator.cal_type, demo_calculator.sign_click)
+    # print(demo_calculator.num_first, float(demo_calculator.num_second), demo_calculator.cal_type, demo_calculator.sign_click)
+    console.log(demo_calculator.num_first, float(demo_calculator.num_second), demo_calculator.cal_type, demo_calculator.sign_click)
     new_total = 0
     if demo_calculator.cal_type == "multiply":
         new_total = float(demo_calculator.num_first) * float(demo_calculator.num_second)
