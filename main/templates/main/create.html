@@ -7,8 +7,72 @@
         {% comment %} css styles link {% endcomment %}    
         <link href="{% static "css\create.css" %}" rel="stylesheet" type="text/css">
     </head>
+    <style>
+        .whatsapp-group{
+          font-family: Arial, sans-serif;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .whatsapp-group .form{
+            margin: 15px 5px;
+            width: 500px;
+            font-size: 16px;
+        }
+
+        .whatsapp-group h1{
+          font-size: 19px;  
+          text-align: left;
+          font-weight: bold
+        }
+        .whatsapp-group .form label,
+        .whatsapp-group .form input,
+        .whatsapp-group .form textarea {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 100%; /* Ensure the inputs take up the full width */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .whatsapp-group .form label,
+        .whatsapp-group .form textarea {
+            display: inline-block;  
+            margin-bottom: 10px;
+            
+        }
+    
+        .whatsapp-group .form textarea {
+            width: 500px; 
+            height: 500px; 
+            padding: 5px;
+            resize: vertical; 
+            box-sizing: border-box;
+        }
+
+        .whatsapp-group .message-container label{
+            position: relative; 
+            top: -40px;        
+          }
+
+        .whatsapp-group .form button{
+          background: #4CAF50;
+          color: white;
+          padding: 10px 15px;
+          margin-top: 5px;
+          border: none;
+          cursor: pointer;
+          
+        }
+
+        .whatsapp-group .form button:hover{
+          background: green;
+        }
+      </style>
     <body>
+        
         <div class="form-container">
+            <h5>Send message (SQL form)</h5>
             <form method="post" action="/create/" class="form-group">
                 {% csrf_token %}
                 <!-- "Name" field -->
@@ -31,83 +95,49 @@
                 <button type="submit" name="save" class="btn-success">Submit</button>
             </form>
         </div>
+        
+        
+        
+        <form class="whatsapp-group">
+            <h1>Send message via WhatsApp</h1>
+            <label for="">Name:</label>
+            <input type="text" class="name">
+            <p></p>
+            <label for="">Email:</label>
+            <input type="text" class="email">
+            <p></p>
+            <label for="">Country:</label>
+            <input type="text" class="country">
+            <p></p>
+            <div class="message-container">
+                <label for="">Message:</label>
+                <textarea class="message"></textarea>
+                <p></p>
+                <button type="button" class="btn-success" onclick="sendwhatsapp();">Send</button>
+            </div>    
+        </form>
+            
+            <script>
+                function sendwhatsapp(){
+                 var phonenumber = "+543543635426";
+          
+                 var name = document.querySelector(".name").value;
+                 var email = document.querySelector(".email").value;
+                 var country = document.querySelector(".country").value;
+                 var message = document.querySelector(".message").value;
+          
+                 var url = "https://wa.me/" + phonenumber + "?text="
+                 +"*Mr/Mrs* "+name+"%0a"
+                 +"*from (Country)* "+country+"%0a"
+                 +"*(Email :* "+email+"%0a" +"*)* "
+                 +"*Send this message :* "+message
+                 +"%0a%0a";
+          
+                 window.open(url, '_blank').focus();
+               }
+            </script>
     </body>
 </html>
 {% endblock %}
-
-
-
-
-
-{% comment %} {% extends "main/base.html" %}
-
-{%block title%}Regsiter{%endblock%}
-
-{% block  content%}
-<div class="form-container">
-    <h3>Message</h3>  
-    <form method="post" action="/create/" class="form-group">
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="form-p-fields">
-                {{ field.label_tag }}
-                {{ field }}
-                {{ field.errors }}
-            </div>
-        {% endfor %}
-    
-        <button type="submit" name="save" class="btn btn-success">Submit</button>
-    </form>
-        
-</div>
-<style>
-    .form-container {
-        display: flex;
-        flex-direction: column;
-        
-    }
-    .form-p-fields p {
-        margin-bottom: 10px;
-    }
-</style>
-{% endblock  %} {% endcomment %}
-
-
-
-
-
-{% comment %} {% extends "main/base.html" %}
-
-{%block title%}Regsiter{%endblock%}
-
-{% block  content%}
-<div class="form-container">
-    <h3>Message</h3>  
-    <form method="post" action="/create/" class="form-group">
-        {% csrf_token %}
-        <div class="form-p-fields">
-            {{form.as_p}}
-        </div>    
-        <button type="submit", name="save" class="btn btn-success">Submit</button>
-    </form>    
-</div>
-<style>
-    .form-container {
-        display: flex;
-        flex-direction: column;
-        
-    }
-    .form-p-fields p {
-        margin-bottom: 10px;
-    }
-</style>
-{% endblock  %}
-
- {% endcomment %}
-
-
-
-
-  
 
 
