@@ -87,19 +87,6 @@ body{
 }
 
 
-#theme-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px auto;
-  height: 80px;
-  width: 120px;
-  border-radius: 20px;
-  background-color: #292D36;
-  padding: 0px 20px;
-}
-
-
 #theme-buttons i {
   cursor: pointer;
 }
@@ -154,21 +141,6 @@ body{
   align-items: center;
 }
 
-#bottom-line {
-  width: 160px;
-  height: 5px;
-  border-radius: 10px;
-  background-color: #474B52;
-  margin: 20px auto;
-}
-
-#row-1-btns div {
-  color: #25FCD5;
-}
-#row-1-btns div:last-of-type, #row-2-btns div:last-of-type, 
-#row-3-btns div:last-of-type, #row-4-btns div:last-of-type, #row-5-btns div:last-of-type {
-  color: #F47A7B;
-}
 
 #typing-text {
   height: 50px;

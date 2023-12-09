@@ -11,24 +11,24 @@ class Calculator:
         self.cal_type = cal_type
 
 # class Element:
-#     def __init__(self, element_id):
-#         self.element_id = element_id
-#         self.element = driver.find_element_by_id(element_id)
+#      def __init__(self, element_id):
+#          self.element_id = element_id
+#          self.element = driver.find_element_by_id(element_id)
 
-#     def set_inner_text(self, text):
-#         self.element.innerText = text
+#      def set_inner_text(self, text):
+#          self.element.innerText = text
 
-#     def set_html(self, html_content):
-#         self.element.innerHTML = html_content
+#      def set_html(self, html_content):
+#          self.element.innerHTML = html_content
 
-#     def add_class(self, class_name):
-#         self.element.classList.add(class_name)
+#      def add_class(self, class_name):
+#          self.element.classList.add(class_name)
 
-#     def remove_class(self, class_name):
-#         self.element.classList.remove(class_name)
+#      def remove_class(self, class_name):
+#          self.element.classList.remove(class_name)
 
-#     def style(self, property, value):
-#         self.element.style[property] = value
+#      def style(self, property, value):
+#          self.element.style[property] = value
         
 demo_calculator = Calculator("", "", "", "")
 answer = Element("typing-text")
