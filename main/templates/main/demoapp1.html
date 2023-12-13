@@ -15,12 +15,11 @@
             <a target="_blank" href="https://github.com/simonvaru/GUI_Image_Editor">https://github.com/simonvaru/GUI_Image_Editor</a>
         </div3>
         <p></p>
-        <h5>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h5>
-
-            <meta charset="UTF-8">
+        <h5>And I'll show and adaptation using JavaScript, with image edition functions base on PYSCRIPT.</h5>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Drawing Tool</title>
-    <style>
+    {% comment %} <title>Image Drawing Tool</title> {% endcomment %}
+    {% comment %} <style>
         body {
             margin: 0;
             padding: 0;
@@ -61,12 +60,10 @@
         canvas {
             border: 1px solid black;
         }
-    </style>
+    </style> {% endcomment %}
     </head>
     <body>
-        <h6>Run JS/Python program</h6>
-
-        <div id="root">
+        {% comment %} <div id="root">
         <div id="left-frame">
             <div class="left-top-frame bg-1"></div>
             <div class="left-top-frame bg-2"></div>
@@ -110,8 +107,7 @@
             ctx.beginPath();
         }
         /*END OF FUNCTIONS*/
-    </script>
-
+    </script> {% endcomment %}
     </body>
 </html>
 {% endblock %} 

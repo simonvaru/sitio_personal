@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block content %}
-{% load static %}
+{% load static %}   
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,98 +13,132 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
         <script defer src="https://pyscript.net/alpha/pyscript.js"></script> 
         {% comment "end PYSCRIPT framework " %}{% endcomment %}
-        <h1>A simple calculator. Based on Python, library math and originally Tkinter.</h1>
-        <p></p>
-        <div3>
-            <a target="_blank" href="https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
-        </div3>
-        <p></p>
-        <h2>And I'll show and adaptation using JavaScript, with edition functions base on PYSCRIPT.</h2>    
+
     </head>
     <body>
-        <div class="calculator-grid">
-            <div class="output">
-                <div data-previous-operand class="previous-operand"></div>
-                <div data-current-operand class="current-operand"></div>
+
+        {% comment %} custom font size for text and blocks{% endcomment %}
+        <style>
+            .custom-font-size-16 {
+                font-size: 16px;
+            }
+            .custom-font-size-10 {
+                font-size: 10px;
+            }
+            .row{
+            padding: 5px;
+            margin-bottom: 30px;
+            margin-right: 0px;
+            margin-left: 0px;
+            background-color:#f8f8f8;    
+            }
+
+        </style>
+
+        <div class="row">
+            <div class="card card-body h-100" id="A">
+            <div class="col-md-12 text-justify">
+                <p class="custom-font-size-16">A simple calculator. Based on Python, library math and originally Tkinter.</p>
+                <a target="_blank" href="https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora" class="custom-font-size-10">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
             </div>
-            <button data-all-clear class="span-two">AC</button>
-            <button data-delete>DEL</button>
-            <button data-operation>/</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-operation>*</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-operation>+</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-operation>-</button>
-            <button data-number>.</button>
-            <button data-number>0</button>
-            <button data-equals class="span-two">=</button>
+            </div>
         </div>
-        {% comment %} end html with css styles and JS logic {% endcomment %}  
-        
-    
 
-
-
-
-        {% comment %} start html with css styles and PYSCRIPT logic {% endcomment %}  
-        {% comment %} <py-script src="{% static "python\logic.py" %}" > </py-script> {% endcomment %}
-        <py-script src="..\..\static\python\logic.py" > </py-script>
-
-        <main id="main">
-
-            <!-- the calculations -->
-            <div id="calc-wrapper">
-                <div id="typing-text"></div>
-                <h4 id="answer"></h4>
+        <div class="row">
+            <div class="col-md-6 text-justify">
+            <div class="card card-body h-100" id="B">    
+                <p class="custom-font-size-16">And I'll show and adaptation using logic in JavaScript.</p>
+                <p class="custom-font-size-16">Code available in GITHUB:</p>
+                <a target="_blank" href=" https://github.com/simonvaru/sitio_personal/blob/main/main/templates/main/demoapp3.html" class="custom-font-size-10">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>    
+                <div class="calculator-grid">
+                    <div class="output">
+                        <div data-previous-operand class="previous-operand"></div>
+                        <div data-current-operand class="current-operand"></div>
+                    </div>
+                    <button data-all-clear class="span-two">AC</button>
+                    <button data-delete>DEL</button>
+                    <button data-operation>/</button>
+                    <button data-number>1</button>
+                    <button data-number>2</button>
+                    <button data-number>3</button>
+                    <button data-operation>*</button>
+                    <button data-number>4</button>
+                    <button data-number>5</button>
+                    <button data-number>6</button>
+                    <button data-operation>+</button>
+                    <button data-number>7</button>
+                    <button data-number>8</button>
+                    <button data-number>9</button>
+                    <button data-operation>-</button>
+                    <button data-number>.</button>
+                    <button data-number>0</button>
+                    <button data-equals class="span-two">=</button>
+                </div>
+                {% comment %} end html with css styles and JS logic {% endcomment %}  
             </div>
-        
-            <div id="btn-wrapper">
-                <div id="row-1-btns">
-                    <div id="ac" class="btns" pys-onClick="sign_clicked">AC</div>
-                    <div id="plus-or-minus" class="btns" pys-onClick="sign_clicked">&#43&#8725&#8722</div>
-                    <div id="percent" class="btns" pys-onClick="sign_clicked">&#37</div>
-                    <div id="divid" class="btns" pys-onClick="sign_clicked">&#247</div>
-                </div>
+            </div>
 
-                <div id="row-2-btns">
-                <div id="number-7" class="btns-num" pys-onClick="numbers_clicked">7</div>
-                <div id="number-8" class="btns-num" pys-onClick="numbers_clicked">8</div>
-                <div id="number-9" class="btns-num" pys-onClick="numbers_clicked">9</div>
-                <div id="multiply" class="btns" pys-onClick="sign_clicked">&#215</div>
-                </div>
 
-                <div id="row-3-btns">
-                    <div id="number-4" class="btns-num" pys-onClick="numbers_clicked">4</div>
-                    <div id="number-5" class="btns-num" pys-onClick="numbers_clicked">5</div>
-                    <div id="number-6" class="btns-num" pys-onClick="numbers_clicked">6</div>
-                    <div id="minus" class="btns" pys-onClick="sign_clicked">&#8722</div>
-                </div>
+            <div class="col-md-6 text-justify">
+            <div class="card card-body h-100" id="C">    
+                <p class="custom-font-size-16">Html grid calculator. Logic in Python, using PyScript.</p>
+                <p class="custom-font-size-16">Code available in GITHUB:</p>
+                <a target="_blank" href=" https://github.com/simonvaru/sitio_personal/blob/main/main/templates/main/demoapp3.html" class="custom-font-size-10">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
+                {% comment %} start html with css styles and PYSCRIPT logic {% endcomment %}  
+                {% comment %} <py-script src="{% static "python\logic.py" %}" > </py-script> {% endcomment %}
+                <py-script src="..\..\static\python\logic.py" > </py-script>
 
-                <div id="row-4-btns">
-                    <div id="number-1" class="btns-num" pys-onClick="numbers_clicked">1</div>
-                    <div id="number-2" class="btns-num" pys-onClick="numbers_clicked">2</div>
-                    <div id="number-3" class="btns-num" pys-onClick="numbers_clicked">3</div>
-                    <div id="plus" class="btns" pys-onClick="sign_clicked">&#43</div>
-                </div>
+                <main id="main">
 
-                <div id="row-5-btns">
-                    <div id="reverse" class="btns-num" pys-onClick="sign_clicked"><i id="reverse" class="bi bi-arrow-counterclockwise"></i></div>
-                    <div id="number-0" class="btns-num" pys-onClick="numbers_clicked">0</div>
-                    <div id="dot" class="btns-num" pys-onClick="numbers_clicked">.</div>
-                    <div id="equal-to" class="btns" pys-onClick="sign_clicked">&#61</div>
-                </div>
-
+                    <!-- the calculations -->
+                    <div id="calc-wrapper">
+                        <div id="typing-text"></div>
+                        <h4 id="answer"></h4>
+                    </div>
                 
-            </div>     
-        </main>
-        {% comment %} end html with css styles and PYSCRIPT logic {% endcomment %}
+                    <div id="btn-wrapper">
+                        <div id="row-1-btns">
+                            <div id="ac" class="btns" pys-onClick="sign_clicked">AC</div>
+                            <div id="plus-or-minus" class="btns" pys-onClick="sign_clicked">&#43&#8725&#8722</div>
+                            <div id="percent" class="btns" pys-onClick="sign_clicked">&#37</div>
+                            <div id="divid" class="btns" pys-onClick="sign_clicked">&#247</div>
+                        </div>
+
+                        <div id="row-2-btns">
+                        <div id="number-7" class="btns-num" pys-onClick="numbers_clicked">7</div>
+                        <div id="number-8" class="btns-num" pys-onClick="numbers_clicked">8</div>
+                        <div id="number-9" class="btns-num" pys-onClick="numbers_clicked">9</div>
+                        <div id="multiply" class="btns" pys-onClick="sign_clicked">&#215</div>
+                        </div>
+
+                        <div id="row-3-btns">
+                            <div id="number-4" class="btns-num" pys-onClick="numbers_clicked">4</div>
+                            <div id="number-5" class="btns-num" pys-onClick="numbers_clicked">5</div>
+                            <div id="number-6" class="btns-num" pys-onClick="numbers_clicked">6</div>
+                            <div id="minus" class="btns" pys-onClick="sign_clicked">&#8722</div>
+                        </div>
+
+                        <div id="row-4-btns">
+                            <div id="number-1" class="btns-num" pys-onClick="numbers_clicked">1</div>
+                            <div id="number-2" class="btns-num" pys-onClick="numbers_clicked">2</div>
+                            <div id="number-3" class="btns-num" pys-onClick="numbers_clicked">3</div>
+                            <div id="plus" class="btns" pys-onClick="sign_clicked">&#43</div>
+                        </div>
+
+                        <div id="row-5-btns">
+                            <div id="reverse" class="btns-num" pys-onClick="sign_clicked"><i id="reverse" class="bi bi-arrow-counterclockwise"></i></div>
+                            <div id="number-0" class="btns-num" pys-onClick="numbers_clicked">0</div>
+                            <div id="dot" class="btns-num" pys-onClick="numbers_clicked">.</div>
+                            <div id="equal-to" class="btns" pys-onClick="sign_clicked">&#61</div>
+                        </div>
+
+                        
+                    </div>     
+                </main>
+                {% comment %} end html with css styles and PYSCRIPT logic {% endcomment %}
+            </div>
+            </div>
+        </div>
     </body>
     
 
