@@ -45,29 +45,39 @@
                 margin: 0px;
                 font-family: ;
             }
+            #ed_title{
+                border: solid #45473C; 
+                padding: 0px;
+                margin: 0px;
+                font-family: ;
+            }
             #image_to_edit{
                 border: 2px solid #45473C; 
                 padding: 0px;
                 margin: 0px;
                 font-family: ;            
             }
+            .icon-img {
+                width: 20px; /* width icons */
+                height: 20px; /* height icons */
+              }
         </style>
     </head>
 
     <body>
         <div class="">
-            <div class="row">
-                <div id="main_title" class="color1 col-md-9 text-center">
+            <div class="row" id="ed_title">
+                <div class="color1 col-md-9 text-center">
                     <p>IMAGE EDITOR</p>
                 </div>
-                <div id="main_title" class="color1 col-md-1 text-center">
-                    <p>opc1</p>
+                <div class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="minimize" class="icon-img"></button>
                 </div>
-                <div id="main_title" class="color1 col-md-1 text-center">
-                    <p>opc2</p>
+                <div class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="size_change" class="icon-img"></button>
                 </div>
-                <div id="main_title" class="color1 col-md-1 text-center">
-                    <p>opc3</p>
+                <div  class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="close" class="icon-img"></button>
                 </div> 
             </div>
         </div>
@@ -76,69 +86,68 @@
         <div class="row">
             <div id="main_title" class="col-md-2 text-center">
                 <div class="color2">
-                    <p>OPEN IMAGE</p>
+                    <button class="">OPEN</button>
                 </div>
                 <div class="color2">
                     <p>POSITION</p>
                 </div>
                 <div class="color3">
-                    <p>rotation</p>
+                    <button class="">rotation+</button>
+                    <button class="">rotation-</button>
                 </div>
                 <div class="color3">
-                    <p>zoom</p>
+                    <button class="">zoom+</button>
+                    <button class="">zoom-</button>
                 </div>
                 <div class="color3">
-                    <p>invert</p>
+                    <button class="">invert</button>
                 </div>
                 <div class="color2">
                     <p>COLOR</p>
                 </div>
                 <div class="color3">
-                    <p>b/w</p>
+                    <button class="">b/w</button>
                 </div>
                 <div class="color3">
-                    <p>invert</p>
+                    <button class="">invert</button>
                 </div>
                 <div class="color3">
-                    <p>brightness</p>
+                    <button class="">brightness</button>
                 </div>
                 <div class="color3">
-                    <p>vibrance</p>
+                    <button class="">vibrance</button>
                 </div>
                 <div class="color2">
                     <p>EFFECTS</p>
                 </div>
                 <div class="color3">
-                    <p>extra/opt</p>
+                    <button class="">extra/opt</button>
                 </div>
                 <div class="color3">
-                    <p>blur</p>
+                    <button class="">blur</button>
                 </div>
                 <div class="color3">
-                    <p>contrast</p>
+                    <button class="">contrast</button>
                 </div>
                 <div class="color2">
                     <p>EXPORT</p>
                 </div>
                 <div class="color3">
-                    <p>name</p>
+                    <button class="">name</button>
                 </div>
                 <div class="color3">
-                    <p>jpg</p>
+                    <button class="">jpg</button>
                 </div>
                 <div class="color3">
-                    <p>png</p>
-                </div>
-                <div class="color3">
-                    <p>open explorer</p>
+                    <button class="">png</button>
                 </div>
                 <div class="color2">
-                    <p>SAVE</p>
+                    <button class="">SAVE</button>
                 </div>
             </div>
                 
             <div id="image_to_edit" class="col-md-10 container">    
-                <p>ifdgm      jjjghh fjhf hgjf ghjfg           fghfgh fg hj ffd fdg</p>
+                <p>edition board</p>
             </div>
         </div>
 
