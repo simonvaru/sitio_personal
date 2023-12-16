@@ -17,97 +17,131 @@
         <p></p>
         <h5>And I'll show and adaptation using JavaScript, with image edition functions base on PYSCRIPT.</h5>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% comment %} <title>Image Drawing Tool</title> {% endcomment %}
-    {% comment %} <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: green;
-        }
-
-        #root {
-            display: flex;
-        }
-
-        #left-frame {
-            width: 200px;
-            height: 600px;
-            background-color: gray;
-        }
-
-        .left-top-frame {
-            width: 200px;
-            height: 100px;
-            margin-bottom: 5px;
-        }
-
-        .bg-1 {
-            background-color: #878E61;
-        }
-
-        .bg-2 {
-            background-color: #CED5A7;
-        }
-        #canvas-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        canvas {
-            border: 1px solid black;
-        }
-    </style> {% endcomment %}
-    </head>
-    <body>
-        {% comment %} <div id="root">
-        <div id="left-frame">
-            <div class="left-top-frame bg-1"></div>
-            <div class="left-top-frame bg-2"></div>
-            <div class="left-top-frame bg-1"></div>
-            <div class="left-top-frame bg-2"></div>
-            <div class="left-top-frame bg-1"></div>
-            <div class="left-top-frame bg-2"></div>
-        </div>
-        <div id="canvas-container">
-            <canvas id="canvas" width="750" height="500" style="border:1px solid black;"></canvas>
-        </div>
-    </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script>
-        /*FUNCTIONS*/
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-        var drawing = false;
 
-        canvas.addEventListener("mousedown", startDrawing);
-        canvas.addEventListener("mousemove", drawPen);
-        canvas.addEventListener("mouseup", stopDrawing);
+        <style>
+            #image_to_edit {
+                background-color: #CED5A7;
+            }
+            .color1{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            .color2{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            .color3{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            #main_title{
+                border: 2px solid #45473C; 
+                padding: 0px;
+                margin: 0px;
+                font-family: ;
+            }
+            #image_to_edit{
+                border: 2px solid #45473C; 
+                padding: 0px;
+                margin: 0px;
+                font-family: ;            
+            }
+        </style>
+    </head>
 
-        function startDrawing(e) {
-            drawing = true;
-            drawPen(e);
-        }
+    <body>
+        <div class="">
+            <div class="row">
+                <div id="main_title" class="color1 col-md-9 text-center">
+                    <p>IMAGE EDITOR</p>
+                </div>
+                <div id="main_title" class="color1 col-md-1 text-center">
+                    <p>opc1</p>
+                </div>
+                <div id="main_title" class="color1 col-md-1 text-center">
+                    <p>opc2</p>
+                </div>
+                <div id="main_title" class="color1 col-md-1 text-center">
+                    <p>opc3</p>
+                </div> 
+            </div>
+        </div>
 
-        function drawPen(e) {
-            if (!drawing) return;
+        
+        <div class="row">
+            <div id="main_title" class="col-md-2 text-center">
+                <div class="color2">
+                    <p>OPEN IMAGE</p>
+                </div>
+                <div class="color2">
+                    <p>POSITION</p>
+                </div>
+                <div class="color3">
+                    <p>rotation</p>
+                </div>
+                <div class="color3">
+                    <p>zoom</p>
+                </div>
+                <div class="color3">
+                    <p>invert</p>
+                </div>
+                <div class="color2">
+                    <p>COLOR</p>
+                </div>
+                <div class="color3">
+                    <p>b/w</p>
+                </div>
+                <div class="color3">
+                    <p>invert</p>
+                </div>
+                <div class="color3">
+                    <p>brightness</p>
+                </div>
+                <div class="color3">
+                    <p>vibrance</p>
+                </div>
+                <div class="color2">
+                    <p>EFFECTS</p>
+                </div>
+                <div class="color3">
+                    <p>extra/opt</p>
+                </div>
+                <div class="color3">
+                    <p>blur</p>
+                </div>
+                <div class="color3">
+                    <p>contrast</p>
+                </div>
+                <div class="color2">
+                    <p>EXPORT</p>
+                </div>
+                <div class="color3">
+                    <p>name</p>
+                </div>
+                <div class="color3">
+                    <p>jpg</p>
+                </div>
+                <div class="color3">
+                    <p>png</p>
+                </div>
+                <div class="color3">
+                    <p>open explorer</p>
+                </div>
+                <div class="color2">
+                    <p>SAVE</p>
+                </div>
+            </div>
+                
+            <div id="image_to_edit" class="col-md-10 container">    
+                <p>ifdgm      jjjghh fjhf hgjf ghjfg           fghfgh fg hj ffd fdg</p>
+            </div>
+        </div>
 
-            ctx.beginPath();
-            ctx.arc(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop, 2.5, 0, Math.PI * 2);
-            ctx.fillStyle = "black";
-            ctx.fill();
-            ctx.closePath();
-        }
-
-        function stopDrawing() {
-            drawing = false;
-            ctx.beginPath();
-        }
-        /*END OF FUNCTIONS*/
-    </script> {% endcomment %}
     </body>
 </html>
 {% endblock %} 
