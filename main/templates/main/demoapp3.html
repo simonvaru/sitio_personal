@@ -86,11 +86,10 @@
                 <a target="_blank" href=" https://github.com/simonvaru/sitio_personal/blob/main/main/templates/main/demoapp3.html" class="custom-font-size-10">https://github.com/simonvaru/PROYECTOS_CV/tree/main/Calculadora</a>
                 {% comment %} start html with css styles and PYSCRIPT logic {% endcomment %}  
                 {% comment %} <py-script src="{% static "python\logic.py" %}" > </py-script> {% endcomment %}
-                <py-script src="..\..\static\python\logic.py" > </py-script>
+                <py-script src="..\..\static\python\logic.py" > </py-script>{% comment %} logic code in python file{% endcomment %}
 
+                {% comment %} beginning html with css styles and PYSCRIPT logic {% endcomment %}
                 <main id="main">
-
-                    <!-- the calculations -->
                     <div id="calc-wrapper">
                         <div id="typing-text"></div>
                         <h4 id="answer"></h4>
@@ -131,8 +130,6 @@
                             <div id="dot" class="btns-num" pys-onClick="numbers_clicked">.</div>
                             <div id="equal-to" class="btns" pys-onClick="sign_clicked">&#61</div>
                         </div>
-
-                        
                     </div>     
                 </main>
                 {% comment %} end html with css styles and PYSCRIPT logic {% endcomment %}
