@@ -6,6 +6,8 @@
     <head>
         {% comment %} css styles link {% endcomment %}
         <link href="{% static "css\demoapp1.css" %}" rel="stylesheet" type="text/css">
+        <img src="{% static "images" %}" >
+        <script class="{% static "js\demoapp1.js" %}"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% comment "start PYSCRIPT framework" %}{% endcomment %}
@@ -49,11 +51,14 @@
                 margin-bottom: 2px;
                 font-family: ;
                 }
-            #image_to_edit{
+            #display_image{
                 border: 2px solid #45473C; 
                 padding: 0px;
                 margin-bottom: 50px;
-                font-family: ;  
+                font-family: ;
+                background-position: center;
+                background-size: cover;  
+                background-color: #CED5A7
                 }
             #vertical_buttons_menu{
                 margin-bottom: 50px;
@@ -88,7 +93,7 @@
         </style> 
         {% comment %} end of custom blocks{% endcomment %}       
         <p>Long live, PYSCRIPT!
-        I have develope a GUI Image Editor.
+        I have developed a GUI Image Editor.
         Unfortunatly, PYSCRIPT don't support Tkinter package yet.
         So, for now, I share the link to the public Github commit.
         </p>
@@ -119,8 +124,8 @@
         <div class="row">
             <div  id="vertical_buttons_menu" class="col-md-2">
                 <div class="upload_file">
-                    <button id="UPLOAD_FILE" class="btn btn-block btn-success" >UPLOAD FILE</button>
-                    <input type="file" class="btn btn-block btn-success"> 
+                    <button class="btn btn-block btn-success">UPLOAD FILE</button>
+                    <input type="file" class="btn btn-block btn-success" accept="image/jpeg, image/png, image/jpg" id="image_input"> 
                 </div>
                 <p>POSITION</p>
                 <div class="row">
@@ -168,14 +173,12 @@
                 <button class="btn btn-block btn-md btn-success">SAVE</button>
             
             </div>
-                
-            <div id="image_to_edit" class="col-md-10 container">    
-                <p>edition board</p>
-            </div>
+             {% comment %} display_image image_to_edit {% endcomment %}   
+            {% comment %} <div id="display_image" class="col-md-10 container"></div> {% endcomment %}
+            <div id="display_image" class="col-md-10 container"></div>
         </div>
-
         {% comment %} end of Image editor code (Html+PyScript){% endcomment %}
-
+   
         
     </body>
 </html>
