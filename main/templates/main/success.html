@@ -3,7 +3,20 @@
 {% block title %}Success{% endblock %}
 
 {% block content %}
-<div class="form-container">
-    <img src="{% static 'images/submission.png' %}" width="500" alt="exito">
-</div>
+<html>
+<head>
+    <meta class="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css\success.css" %}">
+    <title>Insert Files</title>
+</head>
+<body>
+    <div>
+        <input type="file" id="image_input" accept="image/png, image/jpeg, image/jpg">
+        <div id="display_image"></div>
+    </div>
+    <script src="{% static "js\success.js" %}"></script>
+</body>
+</html>
 {% endblock %}
