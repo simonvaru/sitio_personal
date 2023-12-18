@@ -6,7 +6,7 @@ body{
     height: 100vh;
 }
 #display_image{
-    width: 100%;
+    width: 644px;
     height: 544px;
     border: 1px solid black;
     background-position: center;
@@ -23,3 +23,16 @@ input[type="file"] {
     cursor: pointer;
     opacity: 0;  
 } 
+
+#custom_button{
+    width: 100px;
+    height: 17px;
+    border: 1px solid black;
+    color: white;
+    background-position: center;
+    background-color: #28a745;
+    justify-content: center;
+    background-position: center;
+    text-align: center;
+    margin: auto;
+}
