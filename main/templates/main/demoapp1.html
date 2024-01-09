@@ -89,7 +89,8 @@
             }
             {% endcomment %}
         </style> 
-        {% comment %} end of custom blocks{% endcomment %}       
+        {% comment %} end of custom blocks{% endcomment %}    
+        <div class="row">  
         <p>Long live, PYSCRIPT!
         I have develope a GUI Image Editor.
         Unfortunatly, PYSCRIPT don't support Tkinter package yet.
@@ -100,6 +101,7 @@
         </div3>
         <p></p>
         <p>And I'll show and adaptation using Html, Bootstrap, and image edition functions base on PyScript.</p>        
+        </div> 
         {% comment %} Image editor code (Html+PyScript){% endcomment %}
         <div class="">
             <div class="row" id="ed_title">
@@ -118,7 +120,7 @@
             </div>
         </div>
 
-        
+        <section>
         <div class="row">
             <div  id="vertical_buttons_menu" class="col-md-2">
 
@@ -187,10 +189,10 @@
                 <script src="{% static "js\success.js" %}"></script> {% endcomment %}
             </div>
         </div>
-
+        
         {% comment %} end of Image editor code (Html+PyScript){% endcomment %}
 
-        
+   
     </body>
 </html>
 {% endblock %} 
