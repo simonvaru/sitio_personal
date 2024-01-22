@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
+from image_editor import views as ve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("register/", v.register, name="register"),
     path('', include("main.urls")),
     path('', include("django.contrib.auth.urls")),
+    # path('', include("image_editor.urls")),
+    # path('image_editor/', ve.image_editor, name="image_editor"),
     #path('index/', include("main.urls")),
     # path("home/", include("main.urls")),  
     # path("v1/", include("main.urls")),

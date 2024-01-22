@@ -52,3 +52,6 @@ def create(request):
 def success(response):
     return render(response, "main/success.html", {})
 
+def image_editor(response):
+    response.user
+    return render(response, "image_editor/templates/app_im_ed.html", {})
