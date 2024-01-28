@@ -16,8 +16,8 @@ def home(response):
 def cvsim(response):
     return render(response, "main/cvsim.html", {})
 
-def demoapp1(response):
-    return render(response, "main/demoapp1.html", {})
+# def demoapp1(response):
+#     return render(response, "main/demoapp1.html", {})
 
 def demoapp2(response):
     return render(response, "main/demoapp2.html", {})

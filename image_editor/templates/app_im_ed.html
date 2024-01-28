@@ -1,11 +1,202 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome to image editor!</h1>
-</body>
+<html>
+    <head>
+        {% comment %} css styles link {% endcomment %}
+        <link href="{% static "css\demoapp1.css" %}" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA_Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% comment "start PYSCRIPT framework" %}{% endcomment %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script> 
+        <link rel="stylesheet" href="{% static "css\success.css" %}">
+        {% comment "end PYSCRIPT framework " %}{% endcomment %}
+        <py-script src="..\..\static\python\image_edition.py" > </py-script>{% comment %} logic code in python file{% endcomment %}
+    </head>
+
+    <body>
+        {% comment %} custom blocks{% endcomment %}
+        <style>
+            #image_to_edit {
+                background-color: #CED5A7;
+            }
+            .color1{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            .color2{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            .color3{
+                background-color: #CED5A7;
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+            #main_title{
+                border: 2px solid #45473C; 
+                padding: 0px;
+                margin: 0px;
+                font-family: ;
+            }
+            #ed_title{
+                border: solid #45473C; 
+                padding: 0px;
+                margin-bottom: 2px;
+                font-family: ;
+                }
+            #image_to_edit{
+                border: 2px solid #45473C; 
+                padding: 0px;
+                margin-bottom: 50px;
+                font-family: ;  
+                }
+            #vertical_buttons_menu{
+                margin-bottom: 50px;
+            }    
+            .icon-img {
+                width: 20px; /* width icons */
+                height: 20px; /* height icons */
+            }
+            .btn-info{
+                margin-bottom: 4px;
+
+            }
+
+    
+             {% comment %} #UPLOAD_FILE {
+                position: relative;
+                overflow: hidden;
+
+            }
+     
+            /* Hide the default file input */
+            input[type="file"] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;  
+            }
+            {% endcomment %}
+        </style> 
+        {% comment %} end of custom blocks{% endcomment %}    
+        <div class="row">  
+        <p>Long live, PYSCRIPT!
+        I have develope a GUI Image Editor.
+        Unfortunatly, PYSCRIPT don't support Tkinter package yet.
+        So, for now, I share the link to the public Github commit.
+        </p>
+        <div3>
+            <a target="_blank" href="https://github.com/simonvaru/GUI_Image_Editor">https://github.com/simonvaru/GUI_Image_Editor</a>
+        </div3>
+        <p></p>
+        <p>And I'll show and adaptation using Html, Bootstrap, and image edition functions base on PyScript.</p>        
+        </div> 
+        {% comment %} Image editor code (Html+PyScript){% endcomment %}
+        <div class="">
+            <div class="row" id="ed_title">
+                <div class="color1 col-md-9 text-center">
+                    <p>IMAGE EDITOR</p>
+                </div>
+                <div class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="minimize" class="icon-img"></button>
+                </div>
+                <div class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="size_change" class="icon-img"></button>
+                </div>
+                <div  class="color1 col-md-1 text-center">
+                    <button class="btn btn-large"><img src="{% static "images/icons8-minimize-24.png" %}" alt="close" class="icon-img"></button>
+                </div> 
+            </div>
+        </div>
+
+        <section>
+        <div class="row">
+            <div  id="vertical_buttons_menu" class="col-md-2">
+
+                <p>POSITION</p>
+                <div class="row">
+                    <div class="col">    
+                        <button class="btn btn-xs btn-info d-inline">rot+</button>
+                        <button class="btn btn-xs btn-info d-inline">rot-</button>
+                    </div>
+                </div>   
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-xs btn-info d-inline">z+</button>
+                        <button class="btn btn-xs btn-info d-inline">z-</button>
+                    </div>
+                </div>
+            
+                <button class="btn btn-block btn-md btn-info">invert</button>
+            
+                <p>COLOR</p>
+            
+            
+                <button class="btn btn-block btn-md btn-info">b/w</button>
+            
+                <button class="btn btn-block btn-md btn-info">invert</button>
+            
+                <button class="btn btn-block btn-md btn-info">brightness</button>
+            
+                <button class="btn btn-block btn-md btn-info">vibrance</button>
+            
+                <p>EFFECTS</p>
+            
+                <button class="btn btn-block btn-md btn-info">extra/opt</button>
+            
+                <button class="btn btn-block btn-md btn-info">blur</button>
+            
+                <button class="btn btn-block btn-md btn-info">contrast</button>
+            
+                <p>EXPORT</p>
+            
+                <button class="btn btn-block btn-md btn-info">name</button>
+            
+                <button class="btn btn-block btn-md btn-info">jpg</button>
+            
+                <button class="btn btn-block btn-md btn-info">png</button>
+            
+                <button class="btn btn-block btn-md btn-success">SAVE</button>
+            
+            </div>
+                
+            <div id="image_to_edit" class="col-md-10 container">  
+                <div class="upload_file">
+                    <label for="image_input" id="custom_button">
+                        UPLOAD FILE
+                    <input type="file" id="image_input" accept="image/png, image/jpeg, image/jpg">
+                    {% comment %} <button type="file"  id="image_input" class="btn btn-block btn-success" >UPLOAD FILE</button> {% endcomment %}
+                    {% comment %} <input type="file" id="image_input" accept="image/png, image/jpeg, image/jpg">
+                    <input type="file" class="btn btn-block btn-success">  {% endcomment %} 
+                    <div id="display_image"></div>
+                </div> 
+                <script src="{% static "js\success.js" %}"></script> 
+                {% comment %} <div>
+                    <input type="file" id="image_input" accept="image/png, image/jpeg, image/jpg">
+                    <div id="display_image"></div>
+                </div>
+                <script src="{% static "js\success.js" %}"></script> {% endcomment %}
+            </div>
+        </div>
+        
+        {% comment %} end of Image editor code (Html+PyScript){% endcomment %}
+
+   
+    </body>
 </html>
+{% endblock %} 
+
+
+
+
