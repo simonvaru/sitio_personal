@@ -6,12 +6,12 @@ body{
     gap: 10px;
     height: 100vh;
 }
-#display_image{
+body #image_to_edit #display_image{
     width: 644px;
     height: 544px;
     border: 1px solid black;
     background-position: center;
-    background-color: cover;
+    background-color: contain;
 }
 
 input[type="file"] {
