@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'cv_raiz.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#CHOOSE THIS DATABASE TO RUN IN www.render.com
+#CHOOSE THIS DATABASE TO RUN IN LOCALHOST (e.g. python manage.py runserver 7000)
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 '''
 DATABASES = {
@@ -104,7 +104,7 @@ DATABASES = {
 }
 '''
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#CHOOSE THIS DATABASE TO RUN IN LOCALHOST (e.g. python manage.py runserver 7000)
+## CHOOSE THIS DATABASE TO RUN IN www.render.com
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL')) 
