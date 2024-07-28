@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'register.apps.RegisterConfig',
     'image_editor',
+    'raspberry_lora',
 ]
 
 MIDDLEWARE = [
@@ -95,20 +96,22 @@ WSGI_APPLICATION = 'cv_raiz.wsgi.application'
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #CHOOSE THIS DATABASE TO RUN IN LOCALHOST (e.g. python manage.py runserver 7000)
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-'''
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ## CHOOSE THIS DATABASE TO RUN IN www.render.com
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL')) 
 }
+
 # postgres://people_kzbi_user:Rk2FUqOUtT4ZqdzyIzhVn7Hzxiu512J3@dpg-cn8oo0ol5elc738un2n0-a.oregon-postgres.render.com/people_kzbi
 
 # Password validation

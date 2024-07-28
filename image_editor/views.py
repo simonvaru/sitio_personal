@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
+from django.shortcuts import render
 # from .models import ToDoList, Item
 # from .forms import CreateNewList
 
