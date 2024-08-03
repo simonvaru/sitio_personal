@@ -3,7 +3,7 @@ from . import views
 from django.urls import include
 
 urlpatterns = [
-path("<int:id>/", views.index, name="index"),   
+# path("<int:id>/", views.index, name="index"),   
 #path("home/", views.home, name="home"),  
 #path("index/", views.home, name="index"), 
 path("home/", views.home, name="home"),
