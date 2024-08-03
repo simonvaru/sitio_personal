@@ -13,45 +13,45 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         {% block extrastyles %}{% endblock %} {% comment %} added for bootstrap 4 suggested by AI  {% endcomment %}
     </head>
-<body>
-    {% comment %} <p>base template</p>
-    <p>{{name}}</p> {% endcomment %}
+    <body>
+        {% comment %} <p>base template</p>
+        <p>{{name}}</p> {% endcomment %}
 
-    <div class="sidenav">
-        <a href="/home">Home</a>
-        <p></p>
-        <a href="/cv">Curriculum</a>
-        <p></p>
-        <a href="/image_ed/">Image Editor</a>
-        <p></p>
-        <a href="/p2/">Parking Manager</a>
-        <p></p>
-        <a href="/p3/">Calculator</a>
-        <p></p>
-        <a href="/raspberry_lora/">LORA comm</a>
-        <p></p>        
-        <a href="/create/">Leave a Message</a>
-        <p></p>
-        {% comment %} <a href="/list/">List</a> {% endcomment %}
-        {% comment %} <a href="/2">View</> {% endcomment %}
-        {% comment %} <a href="/register/">User Register</a> {% endcomment %}
-    </div>
-    <div id="content", name="content", class="main">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h30 class="mt-2">SIM'S PROFESSIONAL PORTFOLIO <img id="coffee-pic" src="{% static 'images/coffee_cup.png' %}" alt="Coffee Cup" style="width: 40px; height: 40px;"></h30>
-                <hr class="mt-0 mb-4">
-                {% block content %}
-                {% endblock %}
+        <div class="sidenav">
+            <a href="/home">Home</a>
+            <p></p>
+            <a href="/cv">Curriculum</a>
+            <p></p>
+            <a href="/image_ed/">Image Editor</a>
+            <p></p>
+            <a href="/p2/">Parking Manager</a>
+            <p></p>
+            <a href="/p3/">Calculator</a>
+            <p></p>
+            <a href="/raspberry_lora/">LORA comm</a>
+            <p></p>        
+            <a href="/create/">Leave a Message</a>
+            <p></p>
+            {% comment %} <a href="/list/">List</a> {% endcomment %}
+            {% comment %} <a href="/2">View</> {% endcomment %}
+            {% comment %} <a href="/register/">User Register</a> {% endcomment %}
+        </div>
+        <div id="content", name="content", class="main">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <h30 class="mt-2">SIM'S PROFESSIONAL PORTFOLIO <img id="coffee-pic" src="{% static 'images/coffee_cup.png' %}" alt="Coffee Cup" style="width: 40px; height: 40px;"></h30>
+                    <hr class="mt-0 mb-4">
+                    {% block content %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    {% block extrascripts %}{% endblock %} {% comment %} added for bootstrap 4 suggested by AI  {% endcomment %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        {% block extrascripts %}{% endblock %} {% comment %} added for bootstrap 4 suggested by AI  {% endcomment %}
 
-</body>
+    </body>
 </html>
