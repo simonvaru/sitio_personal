@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include("django.contrib.auth.urls")),
     path('', include("image_editor.urls")),
     path('', include('raspberry_lora.urls')),
+    path('', include('message.urls')),
     # path('image_editor/', ve.image_editor, name="image_editor"),
     #path('index/', include("main.urls")),
     # path("home/", include("main.urls")),  

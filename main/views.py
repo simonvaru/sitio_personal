@@ -30,25 +30,25 @@ def demoapp3(response):
     response.user
     return render(response, "main/demoapp3.html", {})
 
-def create(request):
-    if request.method == "POST":
-        form=CreateNewList(request.POST)
+# def create(request):
+#     if request.method == "POST":
+#         form=CreateNewList(request.POST)
         
-        if form.is_valid():
-            todo=ToDoList(
-            name=form.cleaned_data["name"],
-            email=form.cleaned_data["email"],
-            message=form.cleaned_data["message"],
-            )
-            todo.save()  
-        return redirect('success')
+#         if form.is_valid():
+#             todo=ToDoList(
+#             name=form.cleaned_data["name"],
+#             email=form.cleaned_data["email"],
+#             message=form.cleaned_data["message"],
+#             )
+#             todo.save()  
+#         return redirect('success')
             
-    else:    
-        form=CreateNewList()
-    # return render(response, "main/create.html", {"form":form})        
-    return render(request, "main/create.html", {"form":form})
+#     else:    
+#         form=CreateNewList()
+#     # return render(response, "main/create.html", {"form":form})        
+#     return render(request, "main/create.html", {"form":form})
 
-def success(response):
-    return render(response, "main/success.html", {})
+# def success(response):
+#     return render(response, "main/success.html", {})
 
 
