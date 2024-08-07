@@ -1,14 +1,11 @@
 {% extends "main/base.html" %}
-
-{% block title %}Create an Account{% endblock  %}
-{% load crispy_forms_tags %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% load bootstrap5 %}
-
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-
 {% block content %}
+<!DOCTYPE html>
 <form method="POST" class="form-group" >
     {% csrf_token %}
     {% comment "" %}{% form|crispy %}{% endcomment %}

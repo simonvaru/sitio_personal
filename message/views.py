@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ContactForm, ContactMessage
+from .forms import ContactForm
 
 def contact(request):
     if request.method == 'POST':
