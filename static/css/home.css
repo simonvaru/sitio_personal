@@ -1,14 +1,71 @@
-head{
-	background-color:#F8F8F8!important;
-}
 
-h1, h2, p{
-    color: rgba(0, 0, 0, 0.89);
-    font-size: 16px;
-    padding: 0;
-    font-family: Arial ;
-}
+
+/* head{
+	background-color:#F8F8F8!important;
+
+} */
+
+
 
 body{
-	background-color:#F8F8F8!important;
+	background-color:#F8F8F8;
+    color: rgba(0, 0, 0, 0.89);
+    font-style:normal;
+    /* background-image: url("../images/wallpaperflare-cropped.jpg"); */
+    /* background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;  */
 }
+
+
+h1 {
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 20px;
+    padding: 0;
+    font-family: Arial ;
+    align-self: normal;
+}
+
+#text-box {
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 20px;
+    padding: 0;
+    font-family: Arial ;
+    align-self: normal;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+    margin: 0px;
+    
+}
+
+#profile-wrapper {
+    display: flex;              /* Habilita Flexbox */
+    align-items: center;        /* Centra la imagen verticalmente */
+    justify-content: center;    /* Centra la imagen horizontalmente */
+    height: 100%;               /* Asegura que el contenedor ocupe toda la altura disponible */
+}
+
+#deco-pic-1, #deco-pic-2 {
+    height: 41vh;           /* Ajusta la altura de la imagen para que no exceda el contenedor */
+    object-fit: cover;          /* Opcional: asegura que la imagen mantenga proporción al ajustarse */
+    padding: 1px 1px 1px 1px;
+    margin: 0vh;
+}
+
+
+
+#deco-pic-3 {
+    height: 84vh;           /* Ajusta la altura de la imagen para que no exceda el contenedor */
+    object-fit: cover;          /* Opcional: asegura que la imagen mantenga proporción al ajustarse */
+    padding: 1px 1px 1px 1px;
+    margin: 0vh;
+}
+
+.thumbnail {
+    margin: 1px;
+}
+
