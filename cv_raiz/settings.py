@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     'image_editor',
     'raspberry_lora',
-    'phonenumber_field',
+    # 'phonenumber_field',
     'message',
 ]
 
