@@ -9,8 +9,8 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <title>Message</title>
         {% comment %} css styles link {% endcomment %}    
-        <link href="{% static "css\create.css" %}" rel="stylesheet" type="text/css">
-        {% comment %} source material to 3thr message option: https://youtu.be/79E9nFlC7ro?si=qdBFqZisny49iIaf {% endcomment %}
+        <link href="static\css\create.css" rel="stylesheet" type="text/css">
+        {% comment %} source material to 3thr message option (message by email): https://youtu.be/79E9nFlC7ro?si=qdBFqZisny49iIaf {% endcomment %}
     </head>
     <style>
         .whatsapp-group{
@@ -74,80 +74,107 @@
           background: green;
         }
       </style>
-    <body>
-        
-        <div class="form-container">
-            <h5>Send message (SQL form)</h5>
-            <form method="post" action="/create/" class="form-group">
-                {% csrf_token %}
-                <!-- "Name" field -->
-                <div class="form-p-fields">
-                    {{ form.name.label_tag }}
-                    {{ form.name }}
-                    {{ form.name.errors }}
-                </div>
-                <!-- "Phone" field -->
-                <div class="form-p-fields">
-                    {{ form.phone.label_tag }}
-                    {{ form.phone }}
-                    {{ form.phone.errors }}
-                </div>
-                <!-- "Email" field -->
-                <div class="form-p-fields">
-                    {{ form.email.label_tag }}
-                    {{ form.email }}
-                    {{ form.email.errors }}
-                </div>
-                <!-- Apply CSS styling to the "Message" label -->
-                <div class="form-p-fields">
-                    <label for="{{ form.message.id_for_label }}" class="message-label">Message:</label>
-                    {{ form.message }}
-                </div>
-                <button type="submit" name="save" class="btn-success">Submit</button>
-            </form>
-        </div>
-        
-        
-        
-        <form class="whatsapp-group">
-            <h1>Send message via WhatsApp</h1>
-            <label for="">Name:</label>
-            <input type="text" class="name">
-            <p></p>
-            <label for="">Email:</label>
-            <input type="text" class="email">
-            <p></p>
-            <label for="">Country:</label>
-            <input type="text" class="country">
-            <p></p>
-            <div class="message-container">
-                <label for="">Message:</label>
-                <textarea class="message"></textarea>
-                <p></p>
-                <button type="button" class="btn-success" onclick="sendwhatsapp();">Send</button>
-            </div>    
-        </form>
+      
+        <body>
             
-            <script>
-                function sendwhatsapp(){
-                 var phonenumber = "+543543535426";
-          
-                 var name = document.querySelector(".name").value;
-                 var email = document.querySelector(".email").value;
-                 var country = document.querySelector(".country").value;
-                 var message = document.querySelector(".message").value;
-          
-                 var url = "https://wa.me/" + phonenumber + "?text="
-                 +"*Mr/Mrs* "+name+"%0a"
-                 +"*from (Country)* "+country+"%0a"
-                 +"*(Email :* "+email+"%0a" +"*)* "
-                 +"*Send this message :* "+message
-                 +"%0a%0a";
-          
-                 window.open(url, '_blank').focus();
-               }
-            </script>
-    </body>
+            <div class="form-container">
+                <h5>Send message by SQL form</h5>
+                <form method="post" action="/create/" class="form-group">
+                    {% csrf_token %}
+                    <!-- "Name" field -->
+                    <div class="form-p-fields">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                        {{ form.name.errors }}
+                    </div>
+                    <!-- "Phone" field -->
+                    <div class="form-p-fields">
+                        {{ form.phone.label_tag }}
+                        {{ form.phone }}
+                        {{ form.phone.errors }}
+                    </div>
+                    <!-- "Email" field -->
+                    <div class="form-p-fields">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                    </div>
+                    <!-- Apply CSS styling to the "Message" label -->
+                    <div class="form-p-fields">
+                        <label for="{{ form.message.id_for_label }}" class="message-label">Message:</label>
+                        {{ form.message }}
+                    </div>
+                    <button type="submit" name="save" class="btn-success">Submit</button>
+                </form>
+            </div>
+            
+            
+            
+            <form class="whatsapp-group">
+                <h1>Send message by WhatsApp</h1>
+                <label for="">Name:</label>
+                <input type="text" class="name">
+                <p></p>
+                <label for="">Email:</label>
+                <input type="text" class="email">
+                <p></p>
+                <label for="">Country:</label>
+                <input type="text" class="country">
+                <p></p>
+                <div class="message-container">
+                    <label for="">Message:</label>
+                    <textarea class="message"></textarea>
+                    <p></p>
+                    <button type="button" class="btn-success" onclick="sendwhatsapp();">Send</button>
+                </div>    
+            </form>
+                
+                <script>
+                    function sendwhatsapp(){
+                    var phonenumber = "+543543535426";
+            
+                    var name = document.querySelector(".name").value;
+                    var email = document.querySelector(".email").value;
+                    var country = document.querySelector(".country").value;
+                    var message = document.querySelector(".message").value;
+            
+                    var url = "https://wa.me/" + phonenumber + "?text="
+                    +"*Mr/Mrs* "+name+"%0a"
+                    +"*from (Country)* "+country+"%0a"
+                    +"*(Email :* "+email+"%0a" +"*)* "
+                    +"*Send this message :* "+message
+                    +"%0a%0a";
+            
+                    window.open(url, '_blank').focus();
+                }
+                </script>
+
+            <form class="email-group" action="https://formsubmit.co/simon.vargas@bizland.tech" method="POST">
+                <h1>Send Message by Email </h1>
+                <div class="input-group"></div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Contact phone">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows "5" placeholder="Message"></textarea>
+
+                    <div class="form-text">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms and conditions</a>
+                    </div>
+                    
+                    <input class="btn" type="submit" value="Send">
+                    {% comment %} once sent the message, it open a succes window:  {% endcomment %}
+                    <input type="hidden" name="_next" value=https://simonvargasrusso-cv.onrender.com/success/"">
+            </form>
+
+        </body>
 </html>
 {% endblock %}
 
