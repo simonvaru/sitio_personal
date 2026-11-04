@@ -11,15 +11,6 @@ from django.shortcuts import render, redirect
 def home(response):
     return render(response, "main/home.html", {})
 
-def cvsim(response):
-    # x: bool = True
-    # context = {'X': x}
-    # return render(response, "main/cvsim.html", context)
-# def cvsim(response):
-#     x = True
-#     return render(response, "main/cvsim.html", x)
-    return render(response, "main/cvsim.html", {})
-
 def demoapp1(response):
     return render(response, "main/demoapp1.html", {})
 
@@ -50,5 +41,4 @@ def demoapp3(response):
 
 # def success(response):
 #     return render(response, "main/success.html", {})
-
 

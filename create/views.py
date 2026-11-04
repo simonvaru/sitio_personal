@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
 from .forms import ContactForm
+
 
 def contact(request):
     if request.method == 'POST':
@@ -10,7 +12,8 @@ def contact(request):
     else:
         form = ContactForm()
 
-    return render(request, 'create.html', {'form': form})
+    return render(request, 'create/create.html', {'form': form})
+
 
 def contact_success(request):
-    return render(request, 'success.html')
+    return render(request, 'create/success.html')

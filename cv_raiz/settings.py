@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'crispy_forms',
     'bootstrap5',
+    'create.apps.CreateConfig',
+    'cvsim.apps.CvsimConfig',
     'main.apps.MainConfig',
     'register.apps.RegisterConfig',
     'image_editor',
