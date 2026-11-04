@@ -11,27 +11,6 @@
         <button id="englishButton">English</button>  
         <button id="spanishButton">Español</button>
         
-        {% comment %} 
-        The following script code should be exclude fromhere, instead put in a .js file in static directory 
-        {% endcomment %}
-        <script>
-            const englishButton = document.getElementById('englishButton');
-            const spanishButton = document.getElementById('spanishButton');
-            
-            const englishContentDiv = document.getElementById('english-content');
-            const spanishContentDiv = document.getElementById('spanish-content');
-
-        {% comment %}remove the hidden class from the container div so CV in english will appear  {% endcomment %}
-            englishButton.addEventListener('click', () => {
-                englishContentDiv.classList.remove('hidden');
-                spanishContentDiv.classList.add('hidden');
-            });
-        
-            spanishButton.addEventListener('click', () => {
-                spanishContentDiv.classList.remove('hidden');
-                englishContentDiv.classList.add('hidden');
-            });
-        </script>
         {% comment %} {% if X == True %}
         <h2>????</h2>
         {% else %}        
@@ -41,9 +20,9 @@
 
 
         {% comment %} ENGLISH LANGUAGE CURRICULUM {% endcomment %}
-        <br>
-        <div class="english-content hidden">
-            
+        <div id="english-content" class="english-content hidden">
+            <br>
+            <br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-body">
@@ -59,26 +38,26 @@
                     <div class="card card-body h-100" id="profile-wrapper">
                         <img id="profile-pic" src="{% static "images\profilepic6.png" %}" alt=""> 
                         <hr>
-                        <h4>¡Bienvenido! Simon Vargas Russo</h4>
-                        <p>Técnico amante de la programación</p>
+                        <h4>¡Welcome!</h4>
+                        <h4>Simon Vargas Russo</h4>
+                        <p>A technical professional with a passion for programming</p>
                             
                     </div>
                 </div>
 
                 <div class="col-md-8">
                     <div class="card card-body h-100" id="introduction">
-                        <h4>Introducción</h4>
+                        <h4>Introduction</h4>
                         <hr>
-                        <h>Inglés avanzado.</h>
-                        <h>Formándome en los últimos 2 años como programador (Python, SQL, Power BI, uso de GIT).</h> 
-                        <h>Veo la programación como un interés profesional siempre </h> 
-                        <h>presente, una oportunidad para un futuro más interesante y dinámico.</h>
+                        <h>Fluent in English.</h>
+                        <h>Over the past two years, I have been training as a programmer, gaining proficiency in Python, SQL, Power BI, and Git.</h> 
+                        <h>I view programming as an ever-present professional interest and an opportunity for a more compelling and dynamic future.</h>
                         <p></p>
-                        <h>DOMICILIO: Cdad. de Córdoba, Córdoba, Argentina</h> 
-                        <h>DNI: 26.892.654</h>	
-                        <h>E-MAIL: simonvargasr@yahoo.com</h>
-                        <h>TELÉFONO: (+54)(3543) 15535426</h>
-                        <h>Mis contactos:</h>
+                        <h>ADDRESS: Córdoba City, Córdoba, Argentina</h> 
+                        <h>ID: 26.892.654</h>  
+                        <h>EMAIL: simonvargasr@yahoo.com</h>
+                        <h>PHONE: (+54)(3543) 15535426</h>
+                        <h>Contact Information:</h>
                         <p></p>
                         <ul class="social-links">
                             <li><a href="mailto:simonvargasr@yahoo.com"target="_blank"><img class="social" src="{% static 'images/email.png' %}"></a></li>
@@ -102,59 +81,65 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="card card-body h-100" id="education">
-                        <h5>Educación</h5>
+                        <h5>Education</h5>
                         <hr>
-                        <p><b>Educación Secundaria</b> 
-                        Técnico Electromecánico, Escuela Provincial de Educación Técnica Nº 1, La Pampa
+<p><b>High School</b> 
+                        Electromechanical Technician, Provincial Technical Education School No.1, La Pampa
                         1992-1997</p>
 
-                        <p><b>Educación Universitaria</b>
-                        Ingeniería Electrónica, Universidad Nacional de Córdoba 
-                        4er Año incompleto. Interrumpido por motivos laborales</p>
+                        <p><b>Higher Education</b>
+                        Electronic Engineering, National University of Córdoba 
+                        Completed up to 4th year. Discontinued due to employment commitments</p>
 
                     </div>
                 </div>
 
                 <div class="col-md-7">
                     <div class="card card-body h-100" id="programming education">
-                        <h5>Formación como programador - Cursos</h5>
+                        <h5>Programming Education - Courses</h5>
                         <hr>
                         <p><b>PostgreSQL Summary Stats and Window Functions</b> 
                         DATACAMP
-                        Año 2023</p>
+                        Year 2023</p>
 
                         <p><b>Data Analytic (SQL & M. Power BI)</b>
                         CODERHOUSE
-                        Año 2023</p>
+                        Year 2023</p>
 
                         <p><b>Joining Data in SQL</b>
                         DATACAMP
-                        Año 2023</p>
+                        Year 2023</p>
 
 
                         <p><b>Data Manipulation in SQL</b>
                         DATACAMP
-                        Año 2023</p>
+                        Year 2023</p>
 
                         <p><b>Intermediate SQL</b>
                         CODERHOUSE
-                        Año 2022</p>
+                        <p><b>Secondary Education</b> 
+                        Electromechanical Technician, Provincial Technical Education School No. 1, La Pampa
+                        1992-1997</p>
+
+                        <p><b>Higher Education</b>
+                        Electronic Engineering, National University of Córdoba 
+                        Completed up to 4th year. Discontinued due to employment commitments</p> 2022</p>
 
                         <p><b>Python</b>
-                        Pildoras-Informaticas (72 horas, canal de YouTube, acompañado de prácticas)
-                        Año 2022</p>
+                        Pildoras-Informaticas (72 hours, YouTube channel, follow by all the scheduled practices)
+                        Year 2022</p>
 
                         <p><b>Python</b>
                         CODERHOUSE
-                        Año 2022</p>
+                        Year 2022</p>
 
                         <p><b>GIT</b>
-                        Pildoras-Informaticas (22 horas, canal de YouTube, acompañado de prácticas)
-                        Año 2022</p>
+                        Pildoras-Informaticas (22 hours, YouTube channel, followed by all the scheduled practices)
+                        Year 2022</p>
 
                         <p><b>C++</b>
-                        Universidad Nacional de Córdoba (materia de Ing. Electrónica)
-                        Año 2000</p>
+                        Engineering Course Universidad Nacional de Córdoba (IElectronic Engineering)
+                        Year 2000</p>
                     </div>
                 </div>
             </div>
@@ -162,80 +147,80 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card card-body h-100" id="experience">
-                        <h5>Experiencia Laboral</h5>
+                        <h5>Work Experience</h5>
                         <hr>
-                        <p><b>Central Nuclear Embalse</b> 
-                        Contrato con HENISA Sudamericana S.A.
+<p><b>Embalse Nuclear Power Plant</b> 
+                        Contract with HENISA Sudamericana S.A.
                         Duarte Quiroz 4512, Córdoba. Tel.: (0351)4843372
-                        Empleo desde 1/09/2016 hasta el día 15/12/2018. Contrato por proyecto de potenciación y extensión de vida (Contrato con HENISA Sudamericana S.A., oficinas en Duarte Quiroz 4512, Córdoba. Tel.: (0351)4843372).  
-                        Referencia: Ing.Leonardo Miceli, Ing. Matías Pomares.
-                        Coneccionado en tableros de señales y control. Instalación de bandejas de cables. Cableado. Instalación de cañerías eléctricas y tubbing. Trabajos en altura y zonas contaminadas. Soldado, mecanizado, trabajos varios de taller electromecánico. 
+                        Employment from 09/01/2016 to 12/15/2018. Contract for the power uprating and life extension project (Contract with HENISA Sudamericana S.A., offices at Duarte Quiroz 4512, Córdoba. Tel.: (0351)4843372).  
+                        References: Eng. Leonardo Miceli, Eng. Matías Pomares.
+                        Wiring of signal and control panels. Cable tray installation. Cabling. Electrical conduit and tubing installation. Work at heights and in contaminated areas. Welding, machining, and general electromechanical workshop tasks. 
                         </p>
 
                         <p><b>ZITRO Integral</b>
-                        Ciudad de Córdoba. (351)152035967
-                        Empleo desde 01/03/2019 en adelante.
-                        Técnico electricista. Instalación eléctrica de grandes superficies comerciales (supermercados y cadenas de electrodomésticos). Referencia: Andrés Ortiz. Instalación de cañería, cableado y tableros eléctricos en nuevas superficies. Cableado estructurado. Instalación de centrales de alarmas de robo, incendio y CCTV. Mantenimiento en general.
+                        Córdoba City. (351)152035967
+                        Employment from 03/01/2019 to Present.
+                        Electrical Technician. Electrical installation for large retail locations (supermarkets and appliance chain stores). Reference: Andrés Ortiz. Conduit, cabling, and electrical panel installation in new commercial locations. Structured cabling. Installation of intrusion alarm systems, fire alarms, and CCTV. General maintenance.
                         </p>
 
                         <p><b>TWINS Ingeniería S.R.L.</b>
-                        Ciudad de Córdoba 
-                        Empleo desde 1/012/2013 hasta 21/10/2015. 
-                        Técnico de mantenimiento. Instalación, programación y  mantenimiento correctivo y preventivo de centrales de incendio en industrias y empresas. Instalación de centrales de intrusión. Instalación de cámaras de seguridad (CCTV). Prueba de sistema de bombas de presurización de agua de incendio. Cableado, montaje de cañerías y tableros eléctricos.
+                        Córdoba City 
+                        Employment from 12/01/2013 to 10/21/2015. 
+                        Maintenance Technician. Installation, programming, and corrective and preventive maintenance of industrial and commercial fire alarm control panels. Installation of intrusion alarm panels. Installation of security cameras (CCTV). Testing of fire pump pressurization systems. Cabling, conduit assembly, and electrical panels.
                         </p>
 
                         <p><b>Pastorino Seguridad S.R.L.</b>
-                        Ciudad de Córdoba
-                        Empleo desde 1/03/2010 hasta 1/9/2015.
-                        Instalación, programación y mantenimiento correctivo y preventivo centrales de detección y alarma de incendio edilicias, comerciales e industriales.Tareas cara a cara con el cliente. Recomendación de soluciones, armado y enviado de presupuestos, informes técnicos, relevamientos, coordinación de tareas e instrucción de personal.
+                        Córdoba City
+                        Employment from 03/01/2010 to 09/01/2015.
+                        Installation, programming, and corrective/preventive maintenance of commercial, residential, and industrial fire detection and alarm panels. Client-facing tasks. Solution recommendations, proposal preparation and delivery, technical reports, site surveys, task coordination, and staff instruction.
                         </p>
 
                         <p><b>LOCKER S.R.L.</b>
-                        Ciudad de Córdoba
-                        Empleo desde 1/3/2001  hasta 1/3/2007 
-                        Técnico de mantenimiento.
-                        Instalación y mantenimiento correctivo de sistemas de accesos electrónicos. Instalación y mantenimiento de sistemas de detección y alarma de incendio.Instalación de circuitos de cámaras de vigilancia (CCTV). Administración de software para cámaras monitoreadas por red (IP). Programación de domótica. Cableado estructurado.
+                        Córdoba City
+                        Employment from 03/01/2001 to 03/01/2007 
+                        Maintenance Technician.
+                        Installation and corrective maintenance of electronic access control systems. Installation and maintenance of fire detection and alarm systems. Installation of CCTV surveillance camera circuits. Network-monitored camera (IP) software administration. Home automation (domotics) programming. Structured cabling.
                         </p>
 
-                        <p><b>FEAS Electrónica (fábrica electro-medicina)</b>
-                        Ciudad de Córdoba
-                        Empleo desde 1/08/2007 hasta 01/06/2009 
-                        Operario de producción. 
-                        Configuración, calibración y armado de equipos de electro-medicina (tornos dentales,  monitores multi-paramétricos y desfibriladores). Trabajos manuales generales y procesos industriales seriales.
+                        <p><b>FEAS Electrónica (Electromedical Equipment Manufacturer)</b>
+                        Córdoba City
+                        Employment from 08/01/2007 to 06/01/2009 
+                        Production Operator. 
+                        Configuration, calibration, and assembly of electromedical equipment (dental drills, multiparameter patient monitors, and defibrillators). General manual work and serial industrial processes.
                         </p>
 
-                        <p><b>Service Electro-Var (taller electrónica)</b>
-                        Ciudad de Córdoba
-                        Empleo esporádico desde 1/10/1999 hasta 1/08/2001 
-                        Técnico electrónico ayudante 
-                        Taller de electrónica. Tareas de reparación de TV, audio,  video, controles remotos y monitores. 
+                        <p><b>Service Electro-Var (Electronics Workshop)</b>
+                        Córdoba City
+                        Employment on a freelance/intermittent basis from 10/01/1999 to 08/01/2001 
+                        Assistant Electronics Technician 
+                        Electronics repair shop. Repair tasks for TVs, audio systems, VCRs/video equipment, remote controls, and monitors. 
                         </p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="card card-body h-100" id="languages">
-                        <h4>Idiomas / Formación adicional</h4>
+<h4>Languages / Additional Training</h4>
                         <hr>
-                        <p><b>Inglés</b> 
-                        6 años en Instituto de Cultura Inglesa (L.P.). Nivel avanzado. Discurso y lectura fluido. 
+                        <p><b>English</b> 
+                        6 years at Instituto de Cultura Inglesa (L.P.). Advanced level. Fluent in speech and reading. 
                         </p>
 
-                        <p><b>Francés</b>
-                        2 años en Alianza Francesaa (Córdoba). Formacion autodidacta adicional. Nivel inicial.
+                        <p><b>French</b>
+                        2 years at Alliance Française (Córdoba). Additional self-taught training. Beginner level.
                         </p>
 
-                        <p><b>Otros cursos técnicos</b><br>
-                        <h>&#9674 Diseño de piezas y ensamblajes en Solidworks 2018.</h><br>
-                        <h>&#9674 Autocad 2019 (nivel inicial).</h><br>
-                        <h>&#9674 Seguridad e higiene en ambientes contaminados (CNE).</h><br>
-                        <h>&#9674 Conexionado tableros control e instrumentación (CNE).</h><br>
-                        <h>&#9674 Bases de Datos y Planillas de Calculo.</h><br>		    
-                        <h>&#9674 Introducción al microcontrolador Motorola MC68HC908.</h><br>				   
-                        <h>&#9674 Curso de Networking U.T.N.</h><br>								                      
-                        <h>&#9674 Fuentes Conmutadas (LED).</h><br>
-                        <h>&#9674 Instalaciones eléctricas industriales (LED).</h><br>
-                        <h>&#9674 Curso Soldadura por Arco Eléctrico y Herrería de Obra (FUO Córdoba).</h></p>
+                        <p><b>Other Technical Courses</b><br>
+                        <h>&#9674; Part and Assembly Design in SolidWorks 2018.</h><br>
+                        <h>&#9674; AutoCAD 2019 (Beginner level).</h><br>
+                        <h>&#9674; Health, Safety and Environment in Contaminated Areas (CNE).</h><br>
+                        <h>&#9674; Control and Instrumentation Panel Wiring (CNE).</h><br>
+                        <h>&#9674; Databases and Spreadsheets.</h><br>            
+                        <h>&#9674; Introduction to Motorola MC68HC908 Microcontroller.</h><br>                 
+                        <h>&#9674; Networking Course (U.T.N.).</h><br>                                                      
+                        <h>&#9674; Switched-Mode Power Supplies (LED).</h><br>
+                        <h>&#9674; Industrial Electrical Installations (LED).</h><br>
+                        <h>&#9674; Electric Arc Welding and Metal Construction Course (FUO Córdoba).</h></p>
                     </div>
                 </div>
             </div>
@@ -245,10 +230,10 @@
 
 
         {% comment %} SPANISH LANGUAGE CURRICULUM {% endcomment %}
-        <br>
         {% comment %} <div class="spanish-content hidden"> {% endcomment %}
-        <div class="spanish-content">
-            
+        <div id="spanish-content" class="spanish-content">
+            <br>
+            <br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-body">
@@ -264,7 +249,8 @@
                     <div class="card card-body h-100" id="profile-wrapper">
                         <img id="profile-pic" src="{% static "images\profilepic6.png" %}" alt=""> 
                         <hr>
-                        <h4>¡Bienvenido! Simon Vargas Russo</h4>
+                        <h4>¡Bienvenido!</h4>
+                        <h4>Simon Vargas Russo</h4>
                         <p>Técnico amante de la programación</p>
                             
                     </div>
@@ -447,6 +433,22 @@
         <br>
         </div>
 
+        <script>
+            const englishButton = document.getElementById('englishButton');
+            const spanishButton = document.getElementById('spanishButton');
+            const englishContentDiv = document.getElementById('english-content');
+            const spanishContentDiv = document.getElementById('spanish-content');
+
+            englishButton.addEventListener('click', () => {
+                englishContentDiv.classList.remove('hidden');
+                spanishContentDiv.classList.add('hidden');
+            });
+
+            spanishButton.addEventListener('click', () => {
+                spanishContentDiv.classList.remove('hidden');
+                englishContentDiv.classList.add('hidden');
+            });
+        </script>
 
     </body>
 </html>
