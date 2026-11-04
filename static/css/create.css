@@ -36,3 +36,72 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+.email-group {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content:center;
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+}
+
+.email-group h1 {
+    color: #283629;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.email-group label {
+    color: #283629;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.email-group input, textarea {
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #EDFFF0;
+    border: 2px solid #F0FAF1;
+    color: #283629;
+    outline: none;
+}
+
+.email-group input::placeholder, textarea::placeholder {
+    color: #b5cab6;
+}
+
+.email-group .input-group .form-text {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;  
+    text-align: center;
+}
+
+.email-group .input-group .form-text a {
+    color: #76b28e;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.email-group .input-group .btn {
+    color: #ffffff;
+    font-size: 16px;
+    border: 0;
+    border-radius: 25px;
+    background-color: #283629;
+    box-shadow: 0 0 20px rgba(25, 254, 0, 0.24);
+    cursor: pointer;
+}
+
+.email-group .input-group .btn:hover {
+    background-color: #50e04b;
+}

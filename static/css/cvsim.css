@@ -2,6 +2,10 @@ body{
 	background-color:#F8F8F8!important;
 }
 
+.hidden{
+	display:none!important;
+}
+
 #profile-wrapper{
 	text-align: center;
 }
