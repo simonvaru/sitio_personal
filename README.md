@@ -5,6 +5,6 @@
 # $ static/python/myenv/Scripts/activate.bat
 
 # Note 2: to switch script to run in localserver, or website (www.render.com), go to archive "cv_raiz\settings.py" and change lines. Steps to follow are written from line 95.
-# Note 3: next and neccesary action, mainly using IA Kiro: arrange and relocate templates under ...\root instead of ...\root\main or ...\root\main\templates\main
+# Note 3: home, demoapp2, and demoapp3 are separate root-level apps; main retains shared templates and migrations.
 #
 

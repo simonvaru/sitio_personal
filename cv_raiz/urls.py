@@ -22,15 +22,14 @@ from image_editor import views as ve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("register/", v.register, name="register"),
-    path('', include("main.urls")),
+    path('', include("home.urls")),
+    path('', include("demoapp2.urls")),
+    path('', include("demoapp3.urls")),
     path('', include('create.urls')),
     path('', include('cvsim.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include("image_editor.urls")),
     path('', include('raspberry_lora.urls')),
     # path('image_editor/', ve.image_editor, name="image_editor"),
-    #path('index/', include("main.urls")),
-    # path("home/", include("main.urls")),  
-    # path("v1/", include("main.urls")),
     
 ]
